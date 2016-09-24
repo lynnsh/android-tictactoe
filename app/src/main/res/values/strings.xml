@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TTTAlenaErika</string>
+    <string name="reset">Reset</string>
+    <string name="about">About</string>
+    <string name="zero">Zero</string>
+    <string name="scores">Scores</string>
+    <string name="play">Play</string>
+    <string name="info">You are playing against the droid.</string>
 </resources>
