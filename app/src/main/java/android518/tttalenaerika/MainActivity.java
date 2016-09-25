@@ -2,13 +2,15 @@ package android518.tttalenaerika;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import java.util.Random;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Class responsible for Tic Tac Toe game logic.
+ */
 public class MainActivity extends AppCompatActivity {
 
     private int opponent = 1; //0:other user, 1:computer
@@ -19,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
     private int compPts = 0;
     private int tiePts = 0;
 
+    /**
+     * Lifecycle method. Initiates the board and ImageViews with default values.
+     * @param savedInstanceState Bundle object to restore saved data.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,14 +35,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     * Performs tasks connected to user's choice of the button, i.e.
-     * verifies whether the button is available, whether there is a winning
-     * sequence for the player as a result of this choice, and indicates
-     * player whose turn is the next one.
+     * Invoked when user clicks on the ImageView. Checks for the winner
+     * and either initiates computer's turn or, in case of two humans playing,
+     * indicates whose turn is next.
+     * @param view The ImageView that triggered this method.
      */
     public void btnClick(View view) {
         String currentPlayer = findPlayer(turn);
-        markSpace(view, currentPlayer);
+        reserveView(view, currentPlayer);
         turn++;
 
         if (checkWin()) {
@@ -48,77 +54,102 @@ public class MainActivity extends AppCompatActivity {
                 playerOPts++;
         }
         else {
-            continueGame();
+            initiateNextPlayer();
         }
 
     }
 
-    private void continueGame() {
+    /**
+     * If game is not tied, indicates which player's turn is next.
+     * Initiates computer turn if droid is an opponent.
+     */
+    private void initiateNextPlayer() {
+        //check for a draw
         if (turn > 8) {
             tiePts++;
             Toast.makeText(this, R.string.draw, Toast.LENGTH_LONG).show();
             disableBoard();
         }
+        //two humans playing
         else if (opponent == 0) {
             String player = findPlayer(turn);
             Toast.makeText(this, String.format(getResources().getString(R.string.turn), player),
                     Toast.LENGTH_SHORT).show();
         }
+        //droid playing
         else {
             computerTurn();
             turn++;
         }
     }
 
+    /**
+     * Triggered when the user clicks on Play button.
+     * Clears the board for the next game and changes the opponent.
+     * @param view The view that triggered this method.
+     */
     public void play(View view) {
         opponent = opponent == 1? 0: 1;
         prepareBoard();
     }
 
+    /**
+     * Triggered when the user clicks on Reset button.
+     * Clears the board for the next game.
+     * @param view The view that triggered this method.
+     */
     public void reset(View view) {
         prepareBoard();
     }
 
     /**
      * Examines whether there is a winning position.
+     * @return true if someone has won; false otherwise.
      */
     private boolean checkWin() {
         return  //check horizontally
-                checkImages(views[1], views[2], views[3]) ||
-                checkImages(views[4], views[5], views[6]) ||
-                checkImages(views[7], views[8], views[9])
+                formWinPosition(views[1], views[2], views[3]) ||
+                formWinPosition(views[4], views[5], views[6]) ||
+                formWinPosition(views[7], views[8], views[9])
                 //check vertically
-                || checkImages(views[1], views[4], views[7])
-                || checkImages(views[2], views[5], views[8])
-                || checkImages(views[3], views[6], views[9])
+                || formWinPosition(views[1], views[4], views[7])
+                || formWinPosition(views[2], views[5], views[8])
+                || formWinPosition(views[3], views[6], views[9])
                 //check diagonally
-                || checkImages(views[1], views[5], views[9]) || checkImages(views[3], views[5], views[7]);
+                || formWinPosition(views[1], views[5], views[9]) ||
+                   formWinPosition(views[3], views[5], views[7]);
     }
 
-    private boolean checkImages(View view1, View view2, View view3) {
+    /**
+     * Determines whether views values are the same and not empty, hence leading
+     * to the winning position.
+     * @param view1 The first view to compare to.
+     * @param view2 The second view to compare to.
+     * @param view3 The third view to compare to.
+     * @return true if views form a winning position; false otherwise.
+     */
+    private boolean formWinPosition(View view1, View view2, View view3) {
         Object obj = view1.getTag();
         String val1 = obj == null? "" : obj.toString();
         obj = view2.getTag();
         String val2 = obj == null? "" : obj.toString();
         obj = view3.getTag();
         String val3 = obj == null? "" : obj.toString();
-        if (val1.equals(val2) && val1.equals(val3) && !val1.isEmpty()) {
-            //changeColor(val1, val2, val3);
-            return true;
-        }
-        return false;
+        return val1.equals(val2) && val1.equals(val3) && !val1.isEmpty();
     }
 
     /**
-     * Sets and displays computer's choice according to the chosen level
-     * of difficulty. Checks whether this choice led to a win.
+     * Determines computer's choice and its consequences,
+     * that is it displays the choice on the board and
+     * checks whether the computer has won the game
+     * (computer points are increased if this is the case).
      */
     private void computerTurn()
     {
         int choice = compEasy();
         ImageView iv = views[choice];
         iv.setImageResource(R.drawable.o);
-        iv.setOnClickListener(null);
+        iv.setClickable(false);
         iv.setTag("O");
 
         if (checkWin())  {
@@ -126,13 +157,10 @@ public class MainActivity extends AppCompatActivity {
             compPts++;
             disableBoard();
         }
-        else {}
-            //enableBoard();
     }
 
     /**
      * Randomly assigns computer's choice.
-     *
      * @return computer's choice.
      */
     private int compEasy()
@@ -141,23 +169,22 @@ public class MainActivity extends AppCompatActivity {
         int choice = 0;
         do {
             choice = random.nextInt(9)+1;
-        } while (isTaken(choice));
+        } while (isViewReserved(choice));
 
         return choice;
     }
 
-
-
+    /**
+     * Makes buttons not clickable.
+     */
     private void disableBoard() {
         for(int i = 1; i < views.length; i++)
-            views[i].setOnClickListener(null);
+            views[i].setClickable(false);
     }
 
     /**
      * Finds current player according to the turn value.
-     *
      * @param turn Current turn value.
-     *
      * @return current player, which could be X or O.
      */
     private String findPlayer(int turn)
@@ -169,19 +196,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Verifies whether given button is already taken.
-     *
-     * @param num The integer number of the button.
-     *
-     * @return true if button is already used;
-     *         false otherwise.
+     * Verifies whether the given view is already reserved by a player.
+     * @param num The integer number of the view.
+     * @return true if view is reserved; false otherwise.
      */
-    private boolean isTaken(int num)  {
-
+    private boolean isViewReserved(int num)  {
         View view = views[num];
         return view.getTag() != null;
     }
 
+    /**
+     * Populates ImageView array to have a reference to all images
+     * representing 1-9 buttons.
+     */
     private void getViews() {
         for(int i = 1; i < views.length; i++) {
             int id = getResources().getIdentifier("img"+i, "id", getPackageName());
@@ -189,9 +216,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void markSpace(View view, String player) {
+    /**
+     * Reserves view for the provided player.
+     * @param view The ImageView to ne reserved.
+     * @param player The player that reserves the view.
+     */
+    private void reserveView(View view, String player) {
         view.setTag(player);
-        view.setOnClickListener(null);
+        view.setClickable(false);
 
         if(player.equals("X"))
             ((ImageView)view).setImageResource(R.drawable.x);
@@ -199,15 +231,14 @@ public class MainActivity extends AppCompatActivity {
             ((ImageView)view).setImageResource(R.drawable.o);
     }
 
+    /**
+     * Clears the board and sets all values to their defaults.
+     */
     private void prepareBoard() {
         for(int i = 1; i < views.length; i++) {
             views[i].setImageResource(R.drawable.back);
             views[i].setTag(null);
-            views[i].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    btnClick(v);
-                }});
+            views[i].setClickable(true);
         }
         TextView tv = (TextView) findViewById(R.id.info);
         if(opponent == 1)
