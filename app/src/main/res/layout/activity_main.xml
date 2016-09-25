@@ -11,21 +11,25 @@
     android:background="@color/colorPrimaryDark"
     tools:context="android518.tttalenaerika.MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="@string/game"
-        android:textAllCaps="true"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="30dp"
-        android:orientation="vertical">
+        android:layout_marginTop="40dp"
+        android:scrollbars="vertical"
+        android:fadeScrollbars="true"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="@string/game"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginBottom="50dp"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -86,7 +90,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="40dp"
             android:orientation="horizontal">
             <ImageView
                 android:layout_width="0dp"
@@ -115,7 +119,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginBottom="30dp">
+            android:layout_marginBottom="50dp">
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -161,11 +165,12 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:textAlignment="center"
             android:id="@+id/info"
             android:textColor="@color/light"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginBottom="15dp"
+            android:layout_weight="1" />
     </LinearLayout>
 
 </RelativeLayout>

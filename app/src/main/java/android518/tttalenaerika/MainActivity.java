@@ -36,10 +36,9 @@ public class MainActivity extends AppCompatActivity {
      */
     public void btnClick(View view) {
         String currentPlayer = findPlayer(turn);
-
         markSpace(view, currentPlayer);
-
         turn++;
+
         if (checkWin()) {
             Toast.makeText(this, String.format(getResources().getString(R.string.win), currentPlayer), Toast.LENGTH_LONG).show();
             disableBoard();
@@ -52,6 +51,23 @@ public class MainActivity extends AppCompatActivity {
             continueGame();
         }
 
+    }
+
+    private void continueGame() {
+        if (turn > 8) {
+            tiePts++;
+            Toast.makeText(this, R.string.draw, Toast.LENGTH_LONG).show();
+            disableBoard();
+        }
+        else if (opponent == 0) {
+            String player = findPlayer(turn);
+            Toast.makeText(this, String.format(getResources().getString(R.string.turn), player),
+                    Toast.LENGTH_SHORT).show();
+        }
+        else {
+            computerTurn();
+            turn++;
+        }
     }
 
     public void play(View view) {
@@ -130,22 +146,7 @@ public class MainActivity extends AppCompatActivity {
         return choice;
     }
 
-    private void continueGame() {
-        if (turn > 8) {
-            tiePts++;
-            Toast.makeText(this, R.string.draw, Toast.LENGTH_LONG).show();
-            disableBoard();
-        }
-        else if (opponent == 0) {
-            String player = findPlayer(turn);
-            Toast.makeText(this, String.format(getResources().getString(R.string.turn), player),
-                                 Toast.LENGTH_SHORT).show();
-        }
-        else {
-            computerTurn();
-            turn++;
-        }
-    }
+
 
     private void disableBoard() {
         for(int i = 1; i < views.length; i++)
