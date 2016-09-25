@@ -5,5 +5,10 @@
     <string name="zero">Zero</string>
     <string name="scores">Scores</string>
     <string name="play">Play</string>
-    <string name="info">You are playing against the droid.</string>
+    <string name="info_comp">Droid playing</string>
+    <string name="info_user">Two Humans playing</string>
+    <string name="win">%1$s player won this game! Click on Reset to play again.</string>
+    <string name="draw">The game is tied! Reset to play again.</string>
+    <string name="turn">Now it is turn for the player %1$s.</string>
+    <string name="computer">Computer won this game!</string>
 </resources>
