@@ -37,15 +37,8 @@ public class MainActivity extends AppCompatActivity {
     public void btnClick(View view) {
         String currentPlayer = findPlayer(turn);
 
-        view.setTag(currentPlayer);
-        view.setOnClickListener(null);
+        markSpace(view, currentPlayer);
 
-        if(currentPlayer.equals("X"))
-            ((ImageView)view).setImageResource(R.drawable.x);
-        else
-            ((ImageView)view).setImageResource(R.drawable.o);
-
-        //disableBoard();
         turn++;
         if (checkWin()) {
             Toast.makeText(this, String.format(getResources().getString(R.string.win), currentPlayer), Toast.LENGTH_LONG).show();
@@ -56,21 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 playerOPts++;
         }
         else {
-            if (turn > 8) {
-                tiePts++;
-                Toast.makeText(this, R.string.draw, Toast.LENGTH_LONG).show();
-                disableBoard();
-            }
-            else if (opponent == 0) {
-                String player = findPlayer(turn);
-                Toast.makeText(this, String.format(getResources().getString(R.string.turn), player), Toast.LENGTH_SHORT).show();
-
-                //enableBoard();
-            }
-            else {
-                computerTurn();
-                turn++;
-            }
+            continueGame();
         }
 
     }
@@ -151,6 +130,23 @@ public class MainActivity extends AppCompatActivity {
         return choice;
     }
 
+    private void continueGame() {
+        if (turn > 8) {
+            tiePts++;
+            Toast.makeText(this, R.string.draw, Toast.LENGTH_LONG).show();
+            disableBoard();
+        }
+        else if (opponent == 0) {
+            String player = findPlayer(turn);
+            Toast.makeText(this, String.format(getResources().getString(R.string.turn), player),
+                                 Toast.LENGTH_SHORT).show();
+        }
+        else {
+            computerTurn();
+            turn++;
+        }
+    }
+
     private void disableBoard() {
         for(int i = 1; i < views.length; i++)
             views[i].setOnClickListener(null);
@@ -192,6 +188,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void markSpace(View view, String player) {
+        view.setTag(player);
+        view.setOnClickListener(null);
+
+        if(player.equals("X"))
+            ((ImageView)view).setImageResource(R.drawable.x);
+        else
+            ((ImageView)view).setImageResource(R.drawable.o);
+    }
+
     private void prepareBoard() {
         for(int i = 1; i < views.length; i++) {
             views[i].setImageResource(R.drawable.back);
@@ -200,8 +206,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     btnClick(v);
-                }
-            });
+                }});
         }
         TextView tv = (TextView) findViewById(R.id.info);
         if(opponent == 1)
