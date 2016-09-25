@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorPrimaryDark"
     tools:context="android518.tttalenaerika.MainActivity">
 
     <TextView
@@ -16,6 +17,8 @@
         android:textAlignment="center"
         android:text="@string/game"
         android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         />
 
     <LinearLayout
@@ -117,28 +120,42 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/button"
+                android:textColor="@color/colorAccent"
+                android:layout_marginRight="5dp"
                 android:text="@string/about"/>
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="reset"
+                android:background="@color/button"
+                android:textColor="@color/colorAccent"
+                android:layout_marginRight="5dp"
                 android:text="@string/reset"/>
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/button"
+                android:textColor="@color/colorAccent"
+                android:layout_marginRight="5dp"
                 android:text="@string/zero"/>
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/button"
+                android:textColor="@color/colorAccent"
+                android:layout_marginRight="5dp"
                 android:text="@string/scores"/>
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="play"
+                android:background="@color/button"
+                android:textColor="@color/colorAccent"
                 android:text="@string/play"/>
         </LinearLayout>
 
@@ -147,6 +164,7 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:id="@+id/info"
+            android:textColor="@color/light"
             android:layout_marginBottom="15dp"/>
     </LinearLayout>
 
