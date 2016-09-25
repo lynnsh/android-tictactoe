@@ -75,6 +75,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void play(View view) {
+        opponent = opponent == 1? 0: 1;
+        prepareBoard();
+    }
+
+    public void reset(View view) {
+        prepareBoard();
+    }
+
     /**
      * Examines whether there is a winning position.
      */
@@ -186,6 +195,7 @@ public class MainActivity extends AppCompatActivity {
     private void prepareBoard() {
         for(int i = 1; i < views.length; i++) {
             views[i].setImageResource(R.drawable.back);
+            views[i].setTag(null);
             views[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
