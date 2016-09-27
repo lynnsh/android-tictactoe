@@ -1,7 +1,6 @@
 package android518.tttalenaerika;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -16,6 +15,11 @@ public class displayScores extends Activity {
     private int tiePts;
     private int compPts;
 
+    /**
+     * Overriden lifecycle method. Calls the methods to get the data from the intent and update
+     * the display with the values for the scores.
+     * @param savedInstanceState Bundle object to restore saved data.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

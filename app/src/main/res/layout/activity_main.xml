@@ -127,7 +127,7 @@
                 android:background="@color/button"
                 android:textColor="@color/colorAccent"
                 android:layout_marginRight="5dp"
-                android:text="@string/about"/>
+                android:text="@string/aboutBtn"/>
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -136,7 +136,7 @@
                 android:background="@color/button"
                 android:textColor="@color/colorAccent"
                 android:layout_marginRight="5dp"
-                android:text="@string/reset"/>
+                android:text="@string/resetBtn"/>
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -144,7 +144,7 @@
                 android:background="@color/button"
                 android:textColor="@color/colorAccent"
                 android:layout_marginRight="5dp"
-                android:text="@string/zero"
+                android:text="@string/zeroBtn"
                 android:onClick="zero"/>
             <Button
                 android:layout_width="0dp"
@@ -153,7 +153,7 @@
                 android:background="@color/button"
                 android:textColor="@color/colorAccent"
                 android:layout_marginRight="5dp"
-                android:text="@string/scores"
+                android:text="@string/scoresBtn"
                 android:onClick="scores"/>
             <Button
                 android:layout_width="0dp"
@@ -162,7 +162,7 @@
                 android:onClick="play"
                 android:background="@color/button"
                 android:textColor="@color/colorAccent"
-                android:text="@string/play"/>
+                android:text="@string/playBtn"/>
         </LinearLayout>
 
         <TextView

@@ -126,7 +126,7 @@
                 android:textColor="@color/colorAccent"
                 android:layout_marginTop="7dp"
                 android:layout_marginBottom="25dp"
-                android:text="@string/about"/>
+                android:text="@string/aboutBtn"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="55sp"
@@ -134,28 +134,30 @@
                 android:background="@color/button"
                 android:textColor="@color/colorAccent"
                 android:layout_marginBottom="25dp"
-                android:text="@string/reset"/>
+                android:text="@string/resetBtn"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="55sp"
                 android:background="@color/button"
                 android:textColor="@color/colorAccent"
                 android:layout_marginBottom="25dp"
-                android:text="@string/zero"/>
+                android:text="@string/zeroBtn"/>
+                android:onClick="zero"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="55sp"
                 android:background="@color/button"
                 android:textColor="@color/colorAccent"
                 android:layout_marginBottom="25dp"
-                android:text="@string/scores"/>
+                android:text="@string/scoresBtn"
+                android:onClick="scores"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="55sp"
                 android:onClick="play"
                 android:background="@color/button"
                 android:textColor="@color/colorAccent"
-                android:text="@string/play"/>
+                android:text="@string/playBtn"/>
         </LinearLayout>
 
     </LinearLayout>
