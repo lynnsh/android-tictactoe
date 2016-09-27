@@ -1,5 +1,6 @@
 package android518.tttalenaerika;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -264,8 +265,8 @@ public class MainActivity extends AppCompatActivity {
      * This method resets the points counters all to zero, and saves
      * the counters to shared preferences.
      *
-     * @param view The buttonView that triggered the method
-     */
+     * @param view The button that triggered the method
+    */
     public void zero(View view)
     {
         // Resetting the points
@@ -286,5 +287,25 @@ public class MainActivity extends AppCompatActivity {
 
         // Saving Shared Preferences
         editor.commit();
+    }
+
+    /**
+     * This method launches the displayScores activity,
+     * which is used to display the current scores.
+     *
+     * @param view The button that triggered the method
+     */
+    public void scores(View view) {
+        // Create intent
+        Intent intent = new Intent(this, displayScores.class);
+
+        // Adding the score values to the intent for transfer
+        intent.putExtra("playerXPts", playerXPts);
+        intent.putExtra("playerOPts", playerOPts);
+        intent.putExtra("tiePts", tiePts);
+        intent.putExtra("compPts", compPts);
+
+        // Start the activity using the intent
+        startActivity(intent);
     }
 }

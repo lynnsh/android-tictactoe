@@ -12,4 +12,8 @@
     <string name="draw">The game is tied! Reset to play again.</string>
     <string name="turn">Now it is turn for the player %1$s.</string>
     <string name="computer">Computer won this game!</string>
+    <string name="scoresPlayerX">Player X wins: </string>
+    <string name="scoresPlayerO">Player O wins: </string>
+    <string name="scoresTies">Ties: </string>
+    <string name="scoresComp">Computer Wins: </string>
 </resources>
