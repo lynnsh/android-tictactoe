@@ -17,6 +17,8 @@
         </activity>
         <activity android:name=".DisplayScoresActivity">
         </activity>
+        <activity android:name=".AboutActivity">
+        </activity>
     </application>
 
 </manifest>

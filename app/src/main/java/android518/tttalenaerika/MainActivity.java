@@ -308,4 +308,18 @@ public class MainActivity extends AppCompatActivity {
         // Start the activity using the intent
         startActivity(intent);
     }
+
+    /**
+     * This method launches the AboutActivity activity,
+     * which is used to display information about how to play and the creators of the app.
+     *
+     * @param view The button that triggered the method
+     */
+    public void about(View view) {
+        // Create intent
+        Intent intent = new Intent(this, AboutActivity.class);
+
+        // Start the activity using the intent
+        startActivity(intent);
+    }
 }
