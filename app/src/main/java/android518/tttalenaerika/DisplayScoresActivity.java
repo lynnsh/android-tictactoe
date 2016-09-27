@@ -8,7 +8,7 @@ import android.widget.TextView;
  * Activity responsible for displaying the MainActivity's scores.
  */
 
-public class displayScores extends Activity {
+public class DisplayScoresActivity extends Activity {
 
     private int playerXPts;
     private int playerOPts;
@@ -27,6 +27,16 @@ public class displayScores extends Activity {
 
         // Retrieving data from Intent
         setData();
+
+        // Retrieve data from SavedInstanceState
+        if (savedInstanceState != null)
+        {
+            // Ints cannot be null, thus do not need to check
+            playerXPts = savedInstanceState.getInt("playerXPts");
+            playerOPts = savedInstanceState.getInt("playerOPts");
+            tiePts = savedInstanceState.getInt("tiePts");
+            compPts = savedInstanceState.getInt("compPts");
+        }
 
         // Update the display
         updateDisplay();
@@ -59,5 +69,22 @@ public class displayScores extends Activity {
         txtViewPlayerO.setText(getResources().getString(R.string.scoresPlayerO) + playerOPts);
         txtViewTies.setText(getResources().getString(R.string.scoresTies) + tiePts);
         txtViewComp.setText(getResources().getString(R.string.scoresComp) + compPts);
+    }
+
+    /**
+     * Overriden method.  Saves score values in the bundle.
+     * @param outState
+     */
+    @Override
+    protected void onSaveInstanceState(Bundle outState)
+    {
+        // Call the super
+        super.onSaveInstanceState(outState);
+
+        // Save scores to instance state
+        outState.putInt("playerXPts", playerXPts);
+        outState.putInt("playerOPts", playerOPts);
+        outState.putInt("tiePts", tiePts);
+        outState.putInt("compPts", compPts);
     }
 }

@@ -290,14 +290,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method launches the displayScores activity,
+     * This method launches the DisplayScoresActivity activity,
      * which is used to display the current scores.
      *
      * @param view The button that triggered the method
      */
     public void scores(View view) {
         // Create intent
-        Intent intent = new Intent(this, displayScores.class);
+        Intent intent = new Intent(this, DisplayScoresActivity.class);
 
         // Adding the score values to the intent for transfer
         intent.putExtra("playerXPts", playerXPts);
