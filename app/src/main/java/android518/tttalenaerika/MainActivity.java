@@ -1,5 +1,6 @@
 package android518.tttalenaerika;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.Toast;
  */
 public class MainActivity extends AppCompatActivity {
 
+    // Maybe the opponent could be a bool isHuman?
     private int opponent = 1; //0:other user, 1:computer
     private ImageView[] views = new ImageView[10];
     private int turn = 0;
@@ -31,6 +33,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getViews();
         prepareBoard();
+
+        // Retrieving Shared Preferences
+        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+
+        // Saving the points if they exist, else keeping them as 0
+        playerXPts = prefs.getInt("playerXPts", 0);
+        playerOPts = prefs.getInt("playerOPts", 0);
+        tiePts = prefs.getInt("tiePts", 0);
+        compPts = prefs.getInt("compPts", 0);
     }
 
 
@@ -218,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Reserves view for the provided player.
-     * @param view The ImageView to ne reserved.
+     * @param view The ImageView to be reserved.
      * @param player The player that reserves the view.
      */
     private void reserveView(View view, String player) {
@@ -247,5 +258,33 @@ public class MainActivity extends AppCompatActivity {
             tv.setText(R.string.info_user);
 
         turn = 0;
+    }
+
+    /**
+     * This method resets the points counters all to zero, and saves
+     * the counters to shared preferences.
+     *
+     * @param view The buttonView that triggered the method
+     */
+    public void zero(View view)
+    {
+        // Resetting the points
+        playerXPts = 0;
+        playerOPts = 0;
+        tiePts = 0;
+        compPts = 0;
+
+        // Getting the Shared Preferences
+        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+
+        // Adding scores to Shared Preferences
+        editor.putInt("playerXPts", playerXPts);
+        editor.putInt("playerOPts", playerOPts);
+        editor.putInt("tiePts", tiePts);
+        editor.putInt("compPts", compPts);
+
+        // Saving Shared Preferences
+        editor.commit();
     }
 }

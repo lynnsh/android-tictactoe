@@ -144,7 +144,8 @@
                 android:background="@color/button"
                 android:textColor="@color/colorAccent"
                 android:layout_marginRight="5dp"
-                android:text="@string/zero"/>
+                android:text="@string/zero"
+                android:onClick="zero"/>
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
