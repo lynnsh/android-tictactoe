@@ -1,13 +1,13 @@
 package android518.tttalenaerika;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 /**
  * Activity responsible for displaying the about page
  */
 
-public class AboutActivity extends Activity {
+public class AboutActivity extends AppCompatActivity {
     /**
      * Overriden lifecycle method. Sets the layout.
      * @param savedInstanceState Bundle object to restore saved data.
@@ -15,6 +15,7 @@ public class AboutActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(R.string.gameName);
         setContentView(R.layout.activity_about);
     }
 }

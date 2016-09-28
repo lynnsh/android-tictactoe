@@ -1,14 +1,14 @@
 package android518.tttalenaerika;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 /**
  * Activity responsible for displaying the MainActivity's scores.
  */
 
-public class DisplayScoresActivity extends Activity {
+public class DisplayScoresActivity extends AppCompatActivity {
 
     private int playerXPts;
     private int playerOPts;
@@ -24,6 +24,7 @@ public class DisplayScoresActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(R.string.gameName);
         setContentView(R.layout.activity_displayscores);
 
         // Retrieving data from Intent

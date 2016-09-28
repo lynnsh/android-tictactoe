@@ -14,7 +14,11 @@ import android.widget.Toast;
  * Class responsible for Tic Tac Toe game logic.
  */
 public class MainActivity extends AppCompatActivity {
-
+    // MISSING: style scores activity
+    // MISSING: style about activity (add picture also)
+    // MISSING: change UI a bit to use weight to fill screens
+    // CHECK: ask to see if onStop or onPause needs to overriden
+    // CHECK: ask if should be using ImageView array of 9 instead (changes in layouts, rightclick find usages)
     private boolean isPlayerTwoHuman = false;
     private ImageView[] views = new ImageView[10];
     private int turn = 0;
@@ -31,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(R.string.gameName);
         setContentView(R.layout.activity_main);
         getViews();
         prepareBoard();
@@ -383,7 +388,6 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Overriden lifecycle method.  Saves the score values to
      * persistent data.
-     * !!! ASK TEACHER IF RIGHT METHOD BEING OVERRIDEN
      */
     @Override
     protected void onStop()
@@ -411,8 +415,7 @@ public class MainActivity extends AppCompatActivity {
      * @param outState
      */
     @Override
-    protected void onSaveInstanceState(Bundle outState)
-    {
+    protected void onSaveInstanceState(Bundle outState) {
         String[] tags = new String[10];
 
         // Call the super
@@ -423,11 +426,9 @@ public class MainActivity extends AppCompatActivity {
         outState.putBoolean("isPlayerTwoHuman", isPlayerTwoHuman);
 
         // Save image data (which letter if applies)
-        for (int i=1; i < views.length; i++)
-        {
+        for (int i = 1; i < views.length; i++) {
             // If tag is not null, add it, else keep the array value as null
-            if (views[i].getTag() != null)
-            {
+            if (views[i].getTag() != null) {
                 tags[i] = views[i].getTag().toString();
             }
         }
@@ -440,9 +441,4 @@ public class MainActivity extends AppCompatActivity {
         outState.putInt("compPts", compPts);
         outState.putInt("resetCount", resetCount);
     }
-
-    // MISSING: onSaveInstanceState for board
-    // MISSING: style scores activity
-    // MISSING: style about activity (add picture also)
-    // MAYBE: change UI a bit to use weight to fill screens
 }
