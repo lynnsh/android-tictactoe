@@ -297,6 +297,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Saving Shared Preferences
         editor.commit();
+
+        // Maybe add a toast here
     }
 
     /**
@@ -363,5 +365,7 @@ public class MainActivity extends AppCompatActivity {
     // MISSING: translate to french
     // MISSING: style scores activity
     // MISSING: finish about activity (style and content)
+    // MISSING: increment resetCount somewhere, implement in scores activity?
     // MAYBE: change UI a bit to use weight to fill screens
+    // MAYBE: add toast to zero, saying scores have been set to 0
 }
