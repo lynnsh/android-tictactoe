@@ -23,7 +23,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="@string/game"
+            android:text="@string/gameName"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="@color/white"
@@ -161,7 +161,7 @@
                     android:layout_weight="1"
                     android:background="@color/button"
                     android:onClick="about"
-                    android:text="@string/aboutBtn"
+                    android:text="@string/btnAbout"
                     android:textColor="@color/colorAccent" />
 
                 <Button
@@ -171,7 +171,7 @@
                     android:layout_weight="1"
                     android:background="@color/button"
                     android:onClick="reset"
-                    android:text="@string/resetBtn"
+                    android:text="@string/btnReset"
                     android:textColor="@color/colorAccent" />
 
                 <Button
@@ -181,7 +181,7 @@
                     android:layout_weight="1"
                     android:background="@color/button"
                     android:onClick="zero"
-                    android:text="@string/zeroBtn"
+                    android:text="@string/btnZero"
                     android:textColor="@color/colorAccent" />
 
                 <Button
@@ -191,7 +191,7 @@
                     android:layout_weight="1"
                     android:background="@color/button"
                     android:onClick="scores"
-                    android:text="@string/scoresBtn"
+                    android:text="@string/btnScores"
                     android:textColor="@color/colorAccent" />
 
                 <Button
@@ -200,7 +200,7 @@
                     android:layout_weight="1"
                     android:background="@color/button"
                     android:onClick="play"
-                    android:text="@string/playBtn"
+                    android:text="@string/btnPlay"
                     android:textColor="@color/colorAccent" />
             </LinearLayout>
         </LinearLayout>

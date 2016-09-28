@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         turn++;
 
         if (checkWin()) {
-            Toast.makeText(this, String.format(getResources().getString(R.string.win), currentPlayer), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, String.format(getResources().getString(R.string.toastPlayerWin), currentPlayer), Toast.LENGTH_LONG).show();
             disableBoard();
             if (currentPlayer.equals("X"))
                 playerXPts++;
@@ -82,13 +82,13 @@ public class MainActivity extends AppCompatActivity {
         //check for a draw
         if (turn > 8) {
             tiePts++;
-            Toast.makeText(this, R.string.draw, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.toastDraw, Toast.LENGTH_LONG).show();
             disableBoard();
         }
         //two humans playing
         else if (isPlayerTwoHuman) {
             String player = findPlayer(turn);
-            Toast.makeText(this, String.format(getResources().getString(R.string.turn), player),
+            Toast.makeText(this, String.format(getResources().getString(R.string.toastTurn), player),
                     Toast.LENGTH_SHORT).show();
         }
         //droid playing
@@ -116,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void reset(View view) {
         prepareBoard();
+        resetCount++;
     }
 
     /**
@@ -169,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
         iv.setTag("O");
 
         if (checkWin())  {
-            Toast.makeText(this, getResources().getString(R.string.computer), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getResources().getString(R.string.toastCompWin), Toast.LENGTH_LONG).show();
             compPts++;
             disableBoard();
         }
@@ -259,11 +260,11 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = (TextView) findViewById(R.id.info);
         if(isPlayerTwoHuman)
         {
-            tv.setText(R.string.info_user);
+            tv.setText(R.string.modePlayer);
         }
         else
         {
-            tv.setText(R.string.info_comp);
+            tv.setText(R.string.modeComp);
         }
 
         turn = 0;
@@ -298,7 +299,8 @@ public class MainActivity extends AppCompatActivity {
         // Saving Shared Preferences
         editor.commit();
 
-        // Maybe add a toast here
+        // Toast to give result
+        Toast.makeText(this, getResources().getString(R.string.toastZero), Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -363,8 +365,6 @@ public class MainActivity extends AppCompatActivity {
     }
     // MISSING: onSaveInstanceState for board
     // MISSING: style scores activity
-    // MISSING: finish about activity (style and content)
-    // MISSING: increment resetCount somewhere, implement in scores activity?
+    // MISSING: style about activity
     // MAYBE: change UI a bit to use weight to fill screens
-    // MAYBE: add toast to zero, saying scores have been set to 0
 }

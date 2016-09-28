@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">TTTAlenaErika</string>
-    <string name="game">Tic Tac Toe</string>
-    <string name="resetBtn">Réinitialiser</string>
-    <string name="aboutBtn">À propos</string>
-    <string name="zeroBtn">Zero</string>
-    <string name="scoresBtn">Points</string>
-    <string name="playBtn">Jouer</string>
-    <string name="info_comp">Joueur contre Ordi</string>
-    <string name="info_user">Joueur contre Joueur</string>
-    <string name="win">Joueur %1$s a gagné la partie!\nCliquez sur réinitialiser pour rejouer.</string>
-    <string name="draw">La partie est une égalité!\nCliquez sur réinitialiser pour rejouer.</string>
-    <string name="turn">C\'est le tour de joueur %1$s.</string>
-    <string name="computer">L\'ordi a gagné la partie!\nCliquez sur réinitialiser pour rejouer.</string>
+    <string name="gameName">Tic Tac Toe</string>
+    <string name="btnReset">Réinitialiser</string>
+    <string name="btnAbout">À propos</string>
+    <string name="btnZero">Zero</string>
+    <string name="btnScores">Points</string>
+    <string name="btnPlay">Jouer</string>
+    <string name="modeComp">Joueur contre Ordi</string>
+    <string name="modePlayer">Joueur contre Joueur</string>
+    <string name="toastPlayerWin">Joueur %1$s a gagné la partie!\nCliquez sur réinitialiser pour rejouer.</string>
+    <string name="toastDraw">La partie est une égalité!\nCliquez sur réinitialiser pour rejouer.</string>
+    <string name="toastTurn">C\'est le tour de joueur %1$s.</string>
+    <string name="toastCompWin">L\'ordi a gagné la partie!\nCliquez sur réinitialiser pour rejouer.</string>
     <string name="scoresPlayerX">Victoires du Joueur X:</string>
     <string name="scoresPlayerO">Victoires du Joueur O:</string>
     <string name="scoresTies">Égalités:</string>
     <string name="scoresComp">Victoires de l\'ordi:</string>
+    <string name="scoresReset">Nombre de réinitialisations:</string>
     <string name="aboutGame">
         Pour gagner la partie, place trois icônes identiques en rang!  Le rang peut être horizontal, vertical, ou en diagonale.
         \nAppuyer sur le bouton Joueur pour changer le mode de jeu entre joueur contre ordi et joueur contre joueur.
@@ -28,4 +29,5 @@
         Cette application a été créé par Alena Shulzhenko et Erika Bourque,
         deux étudiantes dans leur troisième année d\'études en informatique.
     </string>
+    <string name="toastZero">Tous les points sont effacés.</string>
 </resources>

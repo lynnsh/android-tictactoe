@@ -14,6 +14,7 @@ public class DisplayScoresActivity extends Activity {
     private int playerOPts;
     private int tiePts;
     private int compPts;
+    private int resetCount;
 
     /**
      * Overriden lifecycle method. Calls the methods to get the data from the intent and update
@@ -36,6 +37,7 @@ public class DisplayScoresActivity extends Activity {
             playerOPts = savedInstanceState.getInt("playerOPts");
             tiePts = savedInstanceState.getInt("tiePts");
             compPts = savedInstanceState.getInt("compPts");
+            resetCount = savedInstanceState.getInt("resetCount");
         }
 
         // Update the display
@@ -51,6 +53,7 @@ public class DisplayScoresActivity extends Activity {
         playerOPts = getIntent().getExtras().getInt("playerOPts", 0);
         tiePts = getIntent().getExtras().getInt("tiePts", 0);
         compPts = getIntent().getExtras().getInt("compPts", 0);
+        resetCount = getIntent().getExtras().getInt("resetCount", 0);
     }
 
     /**
@@ -63,12 +66,14 @@ public class DisplayScoresActivity extends Activity {
         TextView txtViewPlayerO = (TextView) findViewById(R.id.txtViewPlayerO);
         TextView txtViewTies = (TextView) findViewById(R.id.txtViewTies);
         TextView txtViewComp = (TextView) findViewById(R.id.txtViewComp);
+        TextView txtViewReset = (TextView) findViewById(R.id.txtViewReset);
 
         // Setting the text to append the score
         txtViewPlayerX.setText(getResources().getString(R.string.scoresPlayerX) + playerXPts);
         txtViewPlayerO.setText(getResources().getString(R.string.scoresPlayerO) + playerOPts);
         txtViewTies.setText(getResources().getString(R.string.scoresTies) + tiePts);
         txtViewComp.setText(getResources().getString(R.string.scoresComp) + compPts);
+        txtViewReset.setText(getResources().getString(R.string.scoresReset) + resetCount);
     }
 
     /**
@@ -86,5 +91,6 @@ public class DisplayScoresActivity extends Activity {
         outState.putInt("playerOPts", playerOPts);
         outState.putInt("tiePts", tiePts);
         outState.putInt("compPts", compPts);
+        outState.putInt("resetCount", resetCount);
     }
 }

@@ -1,21 +1,22 @@
 <resources>
     <string name="app_name">TTTAlenaErika</string>
-    <string name="game">Tic Tac Toe</string>
-    <string name="resetBtn">Reset</string>
-    <string name="aboutBtn">About</string>
-    <string name="zeroBtn">Zero</string>
-    <string name="scoresBtn">Scores</string>
-    <string name="playBtn">Play</string>
-    <string name="info_comp">Player vs Droid</string>
-    <string name="info_user">Player vs Player</string>
-    <string name="win">Player %1$s won the game!\nClick on reset to play again.</string>
-    <string name="draw">The game is tied!\nClick on reset to play again.</string>
-    <string name="turn">It is player %1$s\'s turn.</string>
-    <string name="computer">The droid won the game!\nClick on reset to play again.</string>
+    <string name="gameName">Tic Tac Toe</string>
+    <string name="btnReset">Reset</string>
+    <string name="btnAbout">About</string>
+    <string name="btnZero">Zero</string>
+    <string name="btnScores">Scores</string>
+    <string name="btnPlay">Play</string>
+    <string name="modeComp">Player vs Droid</string>
+    <string name="modePlayer">Player vs Player</string>
+    <string name="toastPlayerWin">Player %1$s won the game!\nClick on reset to play again.</string>
+    <string name="toastDraw">The game is tied!\nClick on reset to play again.</string>
+    <string name="toastTurn">It is player %1$s\'s turn.</string>
+    <string name="toastCompWin">The droid won the game!\nClick on reset to play again.</string>
     <string name="scoresPlayerX">Player X wins:</string>
     <string name="scoresPlayerO">Player O wins:</string>
     <string name="scoresTies">Ties:</string>
     <string name="scoresComp">Computer Wins:</string>
+    <string name="scoresReset">Reset Count:</string>
     <string name="aboutGame">
         Place three identical icons in a row to win the match!  The icons can be in a row vertically, horizontally and diagonally.
         \nPressing on the Play button will change the game mode from player vs droid to player vs player, and vice versa.
@@ -26,4 +27,5 @@
     <string name="aboutCreators">This app was created by Alena Shulzhenko and Erika Bourque,
         two Dawson College student currently in their third year of studying computer science.
     </string>
+    <string name="toastZero">All scores have been erased.</string>
 </resources>
