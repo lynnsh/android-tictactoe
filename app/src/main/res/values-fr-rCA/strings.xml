@@ -2,11 +2,11 @@
 <resources>
     <string name="app_name">TTTAlenaErika</string>
     <string name="gameName">Tic Tac Toe</string>
-    <string name="btnReset">Réinitialiser</string>
-    <string name="btnAbout">À propos</string>
-    <string name="btnZero">Zero</string>
-    <string name="btnScores">Points</string>
-    <string name="btnPlay">Jouer</string>
+    <string name="resetName">Réinitialiser</string>
+    <string name="aboutName">À propos</string>
+    <string name="zeroName">Zero</string>
+    <string name="scoresName">Points</string>
+    <string name="playName">Jouer</string>
     <string name="modeComp">Joueur contre Ordi</string>
     <string name="modePlayer">Joueur contre Joueur</string>
     <string name="toastPlayerWin">Joueur %1$s a gagné la partie!\nCliquez sur réinitialiser pour rejouer.</string>

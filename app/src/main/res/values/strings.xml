@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">TTTAlenaErika</string>
     <string name="gameName">Tic Tac Toe</string>
-    <string name="btnReset">Reset</string>
-    <string name="btnAbout">About</string>
-    <string name="btnZero">Zero</string>
-    <string name="btnScores">Scores</string>
-    <string name="btnPlay">Play</string>
+    <string name="resetName">Reset</string>
+    <string name="aboutName">About</string>
+    <string name="zeroName">Zero</string>
+    <string name="scoresName">Scores</string>
+    <string name="playName">Play</string>
     <string name="modeComp">Player vs Droid</string>
     <string name="modePlayer">Player vs Player</string>
     <string name="toastPlayerWin">Player %1$s won the game!\nClick on reset to play again.</string>

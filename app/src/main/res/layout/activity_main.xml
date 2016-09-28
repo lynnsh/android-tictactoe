@@ -18,17 +18,6 @@
         android:orientation="vertical"
         android:scrollbars="vertical">
 
-        <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="0dp"-->
-            <!--android:layout_weight="1"-->
-            <!--android:gravity="center_vertical"-->
-            <!--android:text="@string/gameName"-->
-            <!--android:textAlignment="center"-->
-            <!--android:textAllCaps="true"-->
-            <!--android:textColor="@color/white"-->
-            <!--android:textStyle="bold" />-->
-
         <!-- First Row -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -171,7 +160,7 @@
                     android:layout_weight="1"
                     android:background="@color/button"
                     android:onClick="about"
-                    android:text="@string/btnAbout"
+                    android:text="@string/aboutName"
                     android:textColor="@color/colorAccent"
                     android:layout_gravity="center_vertical"/>
 
@@ -182,7 +171,7 @@
                     android:layout_weight="1"
                     android:background="@color/button"
                     android:onClick="reset"
-                    android:text="@string/btnReset"
+                    android:text="@string/resetName"
                     android:textColor="@color/colorAccent"
                     android:layout_gravity="center_vertical"/>
 
@@ -193,7 +182,7 @@
                     android:layout_weight="1"
                     android:background="@color/button"
                     android:onClick="zero"
-                    android:text="@string/btnZero"
+                    android:text="@string/zeroName"
                     android:textColor="@color/colorAccent"
                     android:layout_gravity="center_vertical"/>
 
@@ -204,7 +193,7 @@
                     android:layout_weight="1"
                     android:background="@color/button"
                     android:onClick="scores"
-                    android:text="@string/btnScores"
+                    android:text="@string/scoresName"
                     android:textColor="@color/colorAccent"
                     android:layout_gravity="center_vertical"/>
 
@@ -214,7 +203,7 @@
                     android:layout_weight="1"
                     android:background="@color/button"
                     android:onClick="play"
-                    android:text="@string/btnPlay"
+                    android:text="@string/playName"
                     android:textColor="@color/colorAccent"
                     android:layout_gravity="center_vertical"/>
             </LinearLayout>
