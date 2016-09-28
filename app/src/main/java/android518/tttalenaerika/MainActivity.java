@@ -22,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private int playerOPts = 0;
     private int compPts = 0;
     private int tiePts = 0;
-
-    // !!!!!! Where will this counter be incremented? already in in zero, scores and onstop methods
     private int resetCount = 0;
 
     /**
@@ -40,12 +38,56 @@ public class MainActivity extends AppCompatActivity {
         // Retrieving Shared Preferences
         SharedPreferences prefs = getPreferences(MODE_PRIVATE);
 
-        // Saving the points if they exist, else keeping them as 0
+        // Retrieving the points if they exist, else keeping them as 0
         playerXPts = prefs.getInt("playerXPts", 0);
         playerOPts = prefs.getInt("playerOPts", 0);
         tiePts = prefs.getInt("tiePts", 0);
         compPts = prefs.getInt("compPts", 0);
         resetCount = prefs.getInt("resetCount", 0);
+
+        // Retrieving the state from Bundle
+        if (savedInstanceState != null) {
+            // If statements to avoid overriding sharedPrefs scores.  If zero'd, they will be saved in
+            // SharedPrefs right away.
+            if (savedInstanceState.getInt("playerXPts") != 0)
+            {
+                playerXPts = savedInstanceState.getInt("playerXPts");
+            }
+            if (savedInstanceState.getInt("playerOPts") != 0)
+            {
+                playerOPts = savedInstanceState.getInt("playerOPts");
+            }
+            if (savedInstanceState.getInt("compPts") != 0)
+            {
+                compPts = savedInstanceState.getInt("compPts");
+            }
+            if (savedInstanceState.getInt("tiePts") != 0)
+            {
+                tiePts = savedInstanceState.getInt("tiePts");
+            }
+            if (savedInstanceState.getInt("resetCount") != 0)
+            {
+                resetCount = savedInstanceState.getInt("resetCount");
+            }
+
+            // Getting isPlayerTwoHuman and turn values
+            isPlayerTwoHuman = savedInstanceState.getBoolean("isPlayerTwoHuman");
+            turn = savedInstanceState.getInt("turn");
+
+            // Make sure tags is not empty array
+            if (savedInstanceState.getStringArray("tags").length != 0)
+            {
+                String[] temp = savedInstanceState.getStringArray("tags");
+                for (int i = 1; i < temp.length; i++)
+                {
+                    // Reserve appropriate view if it is not null (un-clicked)
+                    if (temp[i] != null)
+                    {
+                        reserveView(views[i], temp[i]);
+                    }
+                }
+            }
+        }
     }
 
 
@@ -363,8 +405,44 @@ public class MainActivity extends AppCompatActivity {
         // Saving Shared Preferences
         editor.commit();
     }
+
+    /**
+     * Overriden method.  Saves game data and score values in the bundle.
+     * @param outState
+     */
+    @Override
+    protected void onSaveInstanceState(Bundle outState)
+    {
+        String[] tags = new String[10];
+
+        // Call the super
+        super.onSaveInstanceState(outState);
+
+        // Save game turn number and mode
+        outState.putInt("turn", turn);
+        outState.putBoolean("isPlayerTwoHuman", isPlayerTwoHuman);
+
+        // Save image data (which letter if applies)
+        for (int i=1; i < views.length; i++)
+        {
+            // If tag is not null, add it, else keep the array value as null
+            if (views[i].getTag() != null)
+            {
+                tags[i] = views[i].getTag().toString();
+            }
+        }
+        outState.putStringArray("tags", tags);
+
+        // Save scores to instance state
+        outState.putInt("playerXPts", playerXPts);
+        outState.putInt("playerOPts", playerOPts);
+        outState.putInt("tiePts", tiePts);
+        outState.putInt("compPts", compPts);
+        outState.putInt("resetCount", resetCount);
+    }
+
     // MISSING: onSaveInstanceState for board
     // MISSING: style scores activity
-    // MISSING: style about activity
+    // MISSING: style about activity (add picture also)
     // MAYBE: change UI a bit to use weight to fill screens
 }
