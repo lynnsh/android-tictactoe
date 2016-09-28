@@ -6,15 +6,15 @@
     <string name="zeroBtn">Zero</string>
     <string name="scoresBtn">Scores</string>
     <string name="playBtn">Play</string>
-    <string name="info_comp">Droid playing</string>
-    <string name="info_user">Two Humans playing</string>
-    <string name="win">%1$s player won this game! Click on Reset to play again.</string>
-    <string name="draw">The game is tied! Reset to play again.</string>
-    <string name="turn">Now it is turn for the player %1$s.</string>
-    <string name="computer">Computer won this game!</string>
-    <string name="scoresPlayerX">Player X wins: </string>
-    <string name="scoresPlayerO">Player O wins: </string>
-    <string name="scoresTies">Ties: </string>
-    <string name="scoresComp">Computer Wins: </string>
+    <string name="info_comp">Player vs Droid</string>
+    <string name="info_user">Player vs Player</string>
+    <string name="win">Player %1$s won the game!\nClick on reset to play again.</string>
+    <string name="draw">The game is tied!\nClick on reset to play again.</string>
+    <string name="turn">It is player %1$s\'s turn.</string>
+    <string name="computer">The droid won the game!\nClick on reset to play again.</string>
+    <string name="scoresPlayerX">Player X wins:</string>
+    <string name="scoresPlayerO">Player O wins:</string>
+    <string name="scoresTies">Ties:</string>
+    <string name="scoresComp">Computer Wins:</string>
     <string name="aboutTxt">This will be text for the about page.</string>
 </resources>

@@ -15,14 +15,16 @@ import android.widget.Toast;
  */
 public class MainActivity extends AppCompatActivity {
 
-    // Maybe the opponent could be a bool isHuman?
-    private int opponent = 1; //0:other user, 1:computer
+    private boolean isPlayerTwoHuman = false;
     private ImageView[] views = new ImageView[10];
     private int turn = 0;
     private int playerXPts = 0;
     private int playerOPts = 0;
     private int compPts = 0;
     private int tiePts = 0;
+
+    // !!!!!! Where will this counter be incremented? already in in zero, scores and onstop methods
+    private int resetCount = 0;
 
     /**
      * Lifecycle method. Initiates the board and ImageViews with default values.
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         playerOPts = prefs.getInt("playerOPts", 0);
         tiePts = prefs.getInt("tiePts", 0);
         compPts = prefs.getInt("compPts", 0);
+        resetCount = prefs.getInt("resetCount", 0);
     }
 
 
@@ -83,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             disableBoard();
         }
         //two humans playing
-        else if (opponent == 0) {
+        else if (isPlayerTwoHuman) {
             String player = findPlayer(turn);
             Toast.makeText(this, String.format(getResources().getString(R.string.turn), player),
                     Toast.LENGTH_SHORT).show();
@@ -101,7 +104,8 @@ public class MainActivity extends AppCompatActivity {
      * @param view The view that triggered this method.
      */
     public void play(View view) {
-        opponent = opponent == 1? 0: 1;
+        isPlayerTwoHuman = isPlayerTwoHuman == false? true: false;
+        // isPlayerTwoHuman = !isPlayerTwoHuman;
         prepareBoard();
     }
 
@@ -253,10 +257,14 @@ public class MainActivity extends AppCompatActivity {
             views[i].setClickable(true);
         }
         TextView tv = (TextView) findViewById(R.id.info);
-        if(opponent == 1)
-            tv.setText(R.string.info_comp);
-        else
+        if(isPlayerTwoHuman)
+        {
             tv.setText(R.string.info_user);
+        }
+        else
+        {
+            tv.setText(R.string.info_comp);
+        }
 
         turn = 0;
     }
@@ -274,6 +282,7 @@ public class MainActivity extends AppCompatActivity {
         playerOPts = 0;
         tiePts = 0;
         compPts = 0;
+        resetCount = 0;
 
         // Getting the Shared Preferences
         SharedPreferences prefs = getPreferences(MODE_PRIVATE);
@@ -284,6 +293,7 @@ public class MainActivity extends AppCompatActivity {
         editor.putInt("playerOPts", playerOPts);
         editor.putInt("tiePts", tiePts);
         editor.putInt("compPts", compPts);
+        editor.putInt("resetCounter", resetCount);
 
         // Saving Shared Preferences
         editor.commit();
@@ -304,6 +314,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("playerOPts", playerOPts);
         intent.putExtra("tiePts", tiePts);
         intent.putExtra("compPts", compPts);
+        intent.putExtra("resetCount", resetCount);
 
         // Start the activity using the intent
         startActivity(intent);
@@ -322,4 +333,35 @@ public class MainActivity extends AppCompatActivity {
         // Start the activity using the intent
         startActivity(intent);
     }
+
+    /**
+     * Overriden lifecycle method.  Saves the score values to
+     * persistent data.
+     * !!! ASK TEACHER IF RIGHT METHOD BEING OVERRIDEN
+     */
+    @Override
+    protected void onStop()
+    {
+        // Calling super class
+        super.onStop();
+
+        // Getting the Shared Preferences
+        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+
+        // Adding scores to Shared Preferences
+        editor.putInt("playerXPts", playerXPts);
+        editor.putInt("playerOPts", playerOPts);
+        editor.putInt("tiePts", tiePts);
+        editor.putInt("compPts", compPts);
+        editor.putInt("resetCount", resetCount);
+
+        // Saving Shared Preferences
+        editor.commit();
+    }
+    // MISSING: onSaveInstanceState for board
+    // MISSING: translate to french
+    // MISSING: style scores activity
+    // MISSING: finish about activity (style and content)
+    // MAYBE: change UI a bit to use weight to fill screens
 }
