@@ -11,25 +11,25 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txtViewPlayerX"
+            android:id="@+id/txtViewPlayerXTxt"
             android:text="@string/scoresPlayerX" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txtViewPlayerO"
+            android:id="@+id/txtViewPlayerOTxt"
             android:text="@string/scoresPlayerO" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txtViewTies"
+            android:id="@+id/txtViewTiesTxt"
             android:text="@string/scoresTies" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txtViewComp"
+            android:id="@+id/txtViewCompTxt"
             android:text="@string/scoresComp" />
         <TextView
-            android:id="@+id/txtViewReset"
+            android:id="@+id/txtViewResetTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/scoresComp" />

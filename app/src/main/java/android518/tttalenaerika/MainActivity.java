@@ -14,11 +14,12 @@ import android.widget.Toast;
  * Class responsible for Tic Tac Toe game logic.
  */
 public class MainActivity extends AppCompatActivity {
-    // MISSING: style scores activity
     // MISSING: style about activity (add picture also)
     // CHECK: ask to see if onStop or onPause needs to overriden
     // CHECK: ask if should be using ImageView array of 9 instead (changes in layouts, rightclick find usages)
     // CHECK: make toast text centered
+    // CHECK: add close buttons to about and scores activities
+    // CHECK: use font scaling
     private boolean isPlayerTwoHuman = false;
     private ImageView[] views = new ImageView[10];
     private int turn = 0;

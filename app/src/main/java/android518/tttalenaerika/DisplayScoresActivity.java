@@ -63,18 +63,18 @@ public class DisplayScoresActivity extends AppCompatActivity {
     private void updateDisplay()
     {
         // Getting all the appropriate text views
-        TextView txtViewPlayerX = (TextView) findViewById(R.id.txtViewPlayerX);
-        TextView txtViewPlayerO = (TextView) findViewById(R.id.txtViewPlayerO);
-        TextView txtViewTies = (TextView) findViewById(R.id.txtViewTies);
-        TextView txtViewComp = (TextView) findViewById(R.id.txtViewComp);
-        TextView txtViewReset = (TextView) findViewById(R.id.txtViewReset);
+        TextView txtViewPlayerX = (TextView) findViewById(R.id.txtViewPlayerXScore);
+        TextView txtViewPlayerO = (TextView) findViewById(R.id.txtViewPlayerOScore);
+        TextView txtViewTies = (TextView) findViewById(R.id.txtViewTiesScore);
+        TextView txtViewComp = (TextView) findViewById(R.id.txtViewCompScore);
+        TextView txtViewReset = (TextView) findViewById(R.id.txtViewResetScore);
 
         // Setting the text to append the score
-        txtViewPlayerX.setText(getResources().getString(R.string.scoresPlayerX) + playerXPts);
-        txtViewPlayerO.setText(getResources().getString(R.string.scoresPlayerO) + playerOPts);
-        txtViewTies.setText(getResources().getString(R.string.scoresTies) + tiePts);
-        txtViewComp.setText(getResources().getString(R.string.scoresComp) + compPts);
-        txtViewReset.setText(getResources().getString(R.string.scoresReset) + resetCount);
+        txtViewPlayerX.setText("" + playerXPts);
+        txtViewPlayerO.setText("" + playerOPts);
+        txtViewTies.setText("" + tiePts);
+        txtViewComp.setText("" + compPts);
+        txtViewReset.setText("" + resetCount);
     }
 
     /**

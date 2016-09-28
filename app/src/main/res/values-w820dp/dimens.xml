@@ -10,4 +10,5 @@
     <dimen name="controls_right_margin">16dp</dimen>
     <dimen name="button_right_margin">5dp</dimen>
     <dimen name="button_bottom_margin">25dp</dimen>
+    <dimen name="textbox_right_margin">5dp</dimen>
 </resources>
