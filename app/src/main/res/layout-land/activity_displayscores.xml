@@ -28,7 +28,11 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtViewComp"
             android:text="@string/scoresComp" />
-
+        <TextView
+            android:id="@+id/txtViewReset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/scoresComp" />
     </LinearLayout>
 
 </LinearLayout>

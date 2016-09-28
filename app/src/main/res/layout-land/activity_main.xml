@@ -2,173 +2,217 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:background="@color/colorPrimaryDark"
-    tools:context="android518.tttalenaerika.MainActivity"
-    android:weightSum="1">
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="android518.tttalenaerika.MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:layout_marginTop="5sp"
-        android:text="@string/gameName"
-        android:textAllCaps="true"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:layout_marginBottom="10dp"
-        />
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:textAlignment="center"-->
+    <!--android:layout_marginTop="5sp"-->
+    <!--android:text="@string/gameName"-->
+    <!--android:textAllCaps="true"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textStyle="bold"-->
+    <!--android:layout_marginBottom="10dp"-->
+    <!--/>-->
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="vertical"
+        android:layout_height="0dp"
+        android:layout_weight="7"
         android:fadeScrollbars="true"
-        android:layout_marginLeft="120dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:scrollbars="vertical">
 
+        <!-- First Column -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="@dimen/image_right_margin"
+            android:layout_weight="2"
             android:orientation="vertical">
+
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:id="@+id/img1"
-                android:src="@drawable/back"
-                android:onClick="btnClick"/>
-            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/image_bottom_margin"
                 android:layout_weight="1"
+                android:onClick="btnClick"
+                android:scaleType="fitXY"
+                android:src="@drawable/back" />
+
+            <ImageView
                 android:id="@+id/img4"
-                android:onClick="btnClick"
-                android:src="@drawable/back"/>
-            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/image_bottom_margin"
                 android:layout_weight="1"
+                android:onClick="btnClick"
+                android:scaleType="fitXY"
+                android:src="@drawable/back" />
+
+            <ImageView
                 android:id="@+id/img7"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:onClick="btnClick"
-                android:src="@drawable/back"/>
+                android:scaleType="fitXY"
+                android:src="@drawable/back" />
         </LinearLayout>
 
+        <!-- Second Column -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="@dimen/image_right_margin"
+            android:layout_weight="2"
             android:orientation="vertical">
+
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:id="@+id/img2"
-                android:onClick="btnClick"
-                android:src="@drawable/back"/>
-            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/image_bottom_margin"
                 android:layout_weight="1"
+                android:onClick="btnClick"
+                android:scaleType="fitXY"
+                android:src="@drawable/back" />
+
+            <ImageView
                 android:id="@+id/img5"
-                android:onClick="btnClick"
-                android:src="@drawable/back"/>
-            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/image_bottom_margin"
                 android:layout_weight="1"
+                android:onClick="btnClick"
+                android:scaleType="fitXY"
+                android:src="@drawable/back" />
+
+            <ImageView
                 android:id="@+id/img8"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:onClick="btnClick"
-                android:src="@drawable/back"/>
+                android:scaleType="fitXY"
+                android:src="@drawable/back" />
         </LinearLayout>
 
+        <!-- Third Column -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginRight="50dp"
+            android:layout_marginRight="@dimen/controls_right_margin"
+            android:layout_weight="2"
             android:orientation="vertical">
+
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:id="@+id/img3"
-                android:onClick="btnClick"
-                android:src="@drawable/back"/>
-            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/image_bottom_margin"
                 android:layout_weight="1"
+                android:onClick="btnClick"
+                android:scaleType="fitXY"
+                android:src="@drawable/back" />
+
+            <ImageView
                 android:id="@+id/img6"
-                android:onClick="btnClick"
-                android:src="@drawable/back"/>
-            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/image_bottom_margin"
                 android:layout_weight="1"
-                android:id="@+id/img9"
                 android:onClick="btnClick"
-                android:src="@drawable/back"/>
+                android:scaleType="fitXY"
+                android:src="@drawable/back" />
+
+            <ImageView
+                android:id="@+id/img9"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:onClick="btnClick"
+                android:scaleType="fitXY"
+                android:src="@drawable/back" />
         </LinearLayout>
 
+        <!-- Buttons Column -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:orientation="vertical">
+
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="55sp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/button_bottom_margin"
+                android:layout_weight="1"
                 android:background="@color/button"
-                android:textColor="@color/colorAccent"
-                android:layout_marginTop="7dp"
-                android:layout_marginBottom="25dp"
+                android:onClick="about"
                 android:text="@string/btnAbout"
-                android:onClick="about"/>
+                android:textColor="@color/colorAccent" />
+
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="55sp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/button_bottom_margin"
+                android:layout_weight="1"
+                android:background="@color/button"
                 android:onClick="reset"
-                android:background="@color/button"
-                android:textColor="@color/colorAccent"
-                android:layout_marginBottom="25dp"
-                android:text="@string/btnReset"/>
+                android:text="@string/btnReset"
+                android:textColor="@color/colorAccent" />
+
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="55sp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/button_bottom_margin"
+                android:layout_weight="1"
                 android:background="@color/button"
-                android:textColor="@color/colorAccent"
-                android:layout_marginBottom="25dp"
-                android:text="@string/btnZero"/>
-                android:onClick="zero"/>
+                android:onClick="zero"
+                android:text="@string/btnZero"
+                android:textColor="@color/colorAccent" />
+
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="55sp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/button_bottom_margin"
+                android:layout_weight="1"
                 android:background="@color/button"
-                android:textColor="@color/colorAccent"
-                android:layout_marginBottom="25dp"
+                android:onClick="scores"
                 android:text="@string/btnScores"
-                android:onClick="scores"/>
+                android:textColor="@color/colorAccent" />
+
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="55sp"
-                android:onClick="play"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:background="@color/button"
-                android:textColor="@color/colorAccent"
-                android:text="@string/btnPlay"/>
+                android:onClick="play"
+                android:text="@string/btnPlay"
+                android:textColor="@color/colorAccent" />
         </LinearLayout>
 
     </LinearLayout>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textAlignment="center"
         android:id="@+id/info"
-        android:textColor="@color/light"/>
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:textAlignment="center"
+        android:textColor="@color/light" />
+
 
 </LinearLayout>

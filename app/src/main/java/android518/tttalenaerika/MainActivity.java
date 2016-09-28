@@ -16,9 +16,9 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     // MISSING: style scores activity
     // MISSING: style about activity (add picture also)
-    // MISSING: change UI a bit to use weight to fill screens
     // CHECK: ask to see if onStop or onPause needs to overriden
     // CHECK: ask if should be using ImageView array of 9 instead (changes in layouts, rightclick find usages)
+    // CHECK: make toast text centered
     private boolean isPlayerTwoHuman = false;
     private ImageView[] views = new ImageView[10];
     private int turn = 0;
