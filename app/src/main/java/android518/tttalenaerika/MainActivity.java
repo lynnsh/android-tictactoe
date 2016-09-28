@@ -362,7 +362,6 @@ public class MainActivity extends AppCompatActivity {
         editor.commit();
     }
     // MISSING: onSaveInstanceState for board
-    // MISSING: translate to french
     // MISSING: style scores activity
     // MISSING: finish about activity (style and content)
     // MISSING: increment resetCount somewhere, implement in scores activity?
