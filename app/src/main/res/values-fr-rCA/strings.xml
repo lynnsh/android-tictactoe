@@ -17,5 +17,15 @@
     <string name="scoresPlayerO">Victoires du Joueur O:</string>
     <string name="scoresTies">Égalités:</string>
     <string name="scoresComp">Victoires de l\'ordi:</string>
-    <string name="aboutTxt">À remplir pour à propos</string>
+    <string name="aboutGame">
+        Pour gagner la partie, place trois icônes identiques en rang!  Le rang peut être horizontal, vertical, ou en diagonale.
+        \nAppuyer sur le bouton Joueur pour changer le mode de jeu entre joueur contre ordi et joueur contre joueur.
+        \nAppuyer sur le bouton Réinitialiser pour effacer le jeu et recommencer.
+        \nAppuyer sur le bouton Points pour voir l\'accumulation de points pour les parties jouées.
+        \nAppuyer sur le bouton Zero pour effacer tous les points.
+    </string>
+    <string name="aboutCreators">
+        Cette application a été créé par Alena Shulzhenko et Erika Bourque,
+        deux étudiantes dans leur troisième année d\'études en informatique.
+    </string>
 </resources>

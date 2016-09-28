@@ -16,5 +16,14 @@
     <string name="scoresPlayerO">Player O wins:</string>
     <string name="scoresTies">Ties:</string>
     <string name="scoresComp">Computer Wins:</string>
-    <string name="aboutTxt">This will be text for the about page.</string>
+    <string name="aboutGame">
+        Place three identical icons in a row to win the match!  The icons can be in a row vertically, horizontally and diagonally.
+        \nPressing on the Play button will change the game mode from player vs droid to player vs player, and vice versa.
+        \nPressing on the Reset button will clear the board to play a new match.
+        \nPressing on the Scores button will display the tally of scores for the played games.
+        \nPressing on the Zero button will erase all the scores.
+    </string>
+    <string name="aboutCreators">This app was created by Alena Shulzhenko and Erika Bourque,
+        two Dawson College student currently in their third year of studying computer science.
+    </string>
 </resources>
