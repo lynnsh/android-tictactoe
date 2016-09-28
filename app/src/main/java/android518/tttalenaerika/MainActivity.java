@@ -14,7 +14,6 @@ import android.widget.Toast;
  * Class responsible for Tic Tac Toe game logic.
  */
 public class MainActivity extends AppCompatActivity {
-    // CHECK: ask to see if onStop or onPause needs to overriden
     // CHECK: ask if should be using ImageView array of 9 instead (changes in layouts, rightclick find usages)
     // CHECK: make toast text centered
     // CHECK: add close buttons to about and scores activities
@@ -390,10 +389,10 @@ public class MainActivity extends AppCompatActivity {
      * persistent data.
      */
     @Override
-    protected void onStop()
+    protected void onPause()
     {
         // Calling super class
-        super.onStop();
+        super.onPause();
 
         // Getting the Shared Preferences
         SharedPreferences prefs = getPreferences(MODE_PRIVATE);
