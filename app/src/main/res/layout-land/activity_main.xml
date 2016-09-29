@@ -12,18 +12,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="android518.tttalenaerika.MainActivity">
 
-    <!--<TextView-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:textAlignment="center"-->
-    <!--android:layout_marginTop="5sp"-->
-    <!--android:text="@string/gameName"-->
-    <!--android:textAllCaps="true"-->
-    <!--android:textColor="@color/white"-->
-    <!--android:textStyle="bold"-->
-    <!--android:layout_marginBottom="10dp"-->
-    <!--/>-->
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -161,7 +149,8 @@
                 android:background="@color/button"
                 android:onClick="about"
                 android:text="@string/aboutName"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/font_size_button" />
 
             <Button
                 android:layout_width="match_parent"
@@ -171,7 +160,8 @@
                 android:background="@color/button"
                 android:onClick="reset"
                 android:text="@string/resetName"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/font_size_button" />
 
             <Button
                 android:layout_width="match_parent"
@@ -181,7 +171,8 @@
                 android:background="@color/button"
                 android:onClick="zero"
                 android:text="@string/zeroName"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/font_size_button" />
 
             <Button
                 android:layout_width="match_parent"
@@ -191,7 +182,8 @@
                 android:background="@color/button"
                 android:onClick="scores"
                 android:text="@string/scoresName"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/font_size_button" />
 
             <Button
                 android:layout_width="match_parent"
@@ -200,7 +192,8 @@
                 android:background="@color/button"
                 android:onClick="play"
                 android:text="@string/playName"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/font_size_button" />
         </LinearLayout>
 
     </LinearLayout>
@@ -212,7 +205,8 @@
         android:layout_weight="1"
         android:gravity="center_vertical"
         android:textAlignment="center"
-        android:textColor="@color/light" />
+        android:textColor="@color/light"
+        android:textSize="@dimen/font_size_text" />
 
 
 </LinearLayout>

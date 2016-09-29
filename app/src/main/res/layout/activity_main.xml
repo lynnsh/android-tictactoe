@@ -145,7 +145,8 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:textAlignment="center"
-                android:textColor="@color/light" />
+                android:textColor="@color/light"
+                android:textSize="@dimen/font_size_text"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -162,7 +163,8 @@
                     android:onClick="about"
                     android:text="@string/aboutName"
                     android:textColor="@color/colorAccent"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/font_size_button"/>
 
                 <Button
                     android:layout_width="0dp"
@@ -173,7 +175,8 @@
                     android:onClick="reset"
                     android:text="@string/resetName"
                     android:textColor="@color/colorAccent"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/font_size_button"/>
 
                 <Button
                     android:layout_width="0dp"
@@ -184,7 +187,8 @@
                     android:onClick="zero"
                     android:text="@string/zeroName"
                     android:textColor="@color/colorAccent"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/font_size_button"/>
 
                 <Button
                     android:layout_width="0dp"
@@ -195,7 +199,8 @@
                     android:onClick="scores"
                     android:text="@string/scoresName"
                     android:textColor="@color/colorAccent"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/font_size_button"/>
 
                 <Button
                     android:layout_width="0dp"
@@ -205,7 +210,8 @@
                     android:onClick="play"
                     android:text="@string/playName"
                     android:textColor="@color/colorAccent"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/font_size_button"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

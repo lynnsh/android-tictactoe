@@ -9,4 +9,7 @@
     <dimen name="controls_bottom_margin">16dp</dimen>
     <dimen name="button_right_margin">5dp</dimen>
     <dimen name="textbox_right_margin">10dp</dimen>
+    <dimen name="font_size_text">20sp</dimen>
+    <dimen name="font_size_button">15sp</dimen>
+    <dimen name="font_size_title">30sp</dimen>
 </resources>

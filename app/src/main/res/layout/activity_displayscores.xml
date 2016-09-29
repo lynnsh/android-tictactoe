@@ -21,7 +21,8 @@
             android:layout_weight="1"
             android:text="@string/scoresName"
             android:textColor="@color/light"
-            android:gravity="center_vertical"/>
+            android:gravity="center_vertical"
+            android:textSize="@dimen/font_size_title"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,7 +38,8 @@
                 android:gravity="end|center_vertical"
                 android:text="@string/scoresPlayerX"
                 android:textColor="@color/light"
-                android:layout_marginRight="@dimen/textbox_right_margin" />
+                android:layout_marginRight="@dimen/textbox_right_margin"
+                android:textSize="@dimen/font_size_text"/>
 
             <TextView
                 android:id="@+id/txtViewPlayerXScore"
@@ -45,7 +47,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:textColor="@color/light" />
+                android:textColor="@color/light"
+                android:textSize="@dimen/font_size_text" />
         </LinearLayout>
 
         <LinearLayout
@@ -62,7 +65,8 @@
                 android:gravity="end|center_vertical"
                 android:text="@string/scoresPlayerO"
                 android:textColor="@color/light"
-                android:layout_marginRight="@dimen/textbox_right_margin" />
+                android:layout_marginRight="@dimen/textbox_right_margin"
+                android:textSize="@dimen/font_size_text" />
 
             <TextView
                 android:id="@+id/txtViewPlayerOScore"
@@ -70,7 +74,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:textColor="@color/light" />
+                android:textColor="@color/light"
+                android:textSize="@dimen/font_size_text" />
         </LinearLayout>
 
         <LinearLayout
@@ -87,7 +92,8 @@
                 android:gravity="end|center_vertical"
                 android:text="@string/scoresTies"
                 android:textColor="@color/light"
-                android:layout_marginRight="@dimen/textbox_right_margin" />
+                android:layout_marginRight="@dimen/textbox_right_margin"
+                android:textSize="@dimen/font_size_text" />
 
             <TextView
                 android:id="@+id/txtViewTiesScore"
@@ -95,7 +101,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:textColor="@color/light" />
+                android:textColor="@color/light"
+                android:textSize="@dimen/font_size_text" />
         </LinearLayout>
 
         <LinearLayout
@@ -112,7 +119,8 @@
                 android:gravity="end|center_vertical"
                 android:text="@string/scoresComp"
                 android:textColor="@color/light"
-                android:layout_marginRight="@dimen/textbox_right_margin" />
+                android:layout_marginRight="@dimen/textbox_right_margin"
+                android:textSize="@dimen/font_size_text" />
 
             <TextView
                 android:id="@+id/txtViewCompScore"
@@ -120,7 +128,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:textColor="@color/light" />
+                android:textColor="@color/light"
+                android:textSize="@dimen/font_size_text" />
         </LinearLayout>
 
         <LinearLayout
@@ -137,7 +146,8 @@
                 android:gravity="end|center_vertical"
                 android:text="@string/scoresComp"
                 android:textColor="@color/light"
-                android:layout_marginRight="@dimen/textbox_right_margin" />
+                android:layout_marginRight="@dimen/textbox_right_margin"
+                android:textSize="@dimen/font_size_text" />
 
             <TextView
                 android:id="@+id/txtViewResetScore"
@@ -145,7 +155,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:textColor="@color/light" />
+                android:textColor="@color/light"
+                android:textSize="@dimen/font_size_text" />
         </LinearLayout>
     </LinearLayout>
 
