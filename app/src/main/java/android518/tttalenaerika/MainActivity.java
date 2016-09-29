@@ -17,7 +17,6 @@ import android.widget.Toast;
  * Class responsible for Tic Tac Toe game logic.
  */
 public class MainActivity extends AppCompatActivity {
-    // CHECK: make toast text centered
 
     private boolean isPlayerTwoHuman = false;
     private ImageView[] views = new ImageView[10];

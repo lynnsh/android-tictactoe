@@ -27,14 +27,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/txtViewPlayerXTxt"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:gravity="end|center_vertical"
                 android:text="@string/scoresPlayerX"
                 android:textColor="@color/light"
@@ -45,7 +45,7 @@
                 android:id="@+id/txtViewPlayerXScore"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:gravity="center_vertical"
                 android:textColor="@color/light"
                 android:textSize="@dimen/font_size_text" />
@@ -54,14 +54,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/txtViewPlayerOTxt"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:gravity="end|center_vertical"
                 android:text="@string/scoresPlayerO"
                 android:textColor="@color/light"
@@ -72,7 +72,7 @@
                 android:id="@+id/txtViewPlayerOScore"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:gravity="center_vertical"
                 android:textColor="@color/light"
                 android:textSize="@dimen/font_size_text" />
@@ -81,14 +81,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/txtViewTiesTxt"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:gravity="end|center_vertical"
                 android:text="@string/scoresTies"
                 android:textColor="@color/light"
@@ -99,7 +99,7 @@
                 android:id="@+id/txtViewTiesScore"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:gravity="center_vertical"
                 android:textColor="@color/light"
                 android:textSize="@dimen/font_size_text" />
@@ -108,14 +108,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/txtViewCompTxt"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:gravity="end|center_vertical"
                 android:text="@string/scoresComp"
                 android:textColor="@color/light"
@@ -126,7 +126,7 @@
                 android:id="@+id/txtViewCompScore"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:gravity="center_vertical"
                 android:textColor="@color/light"
                 android:textSize="@dimen/font_size_text" />
@@ -135,14 +135,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/txtViewResetTxt"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:gravity="end|center_vertical"
                 android:text="@string/scoresReset"
                 android:textColor="@color/light"
@@ -153,11 +153,20 @@
                 android:id="@+id/txtViewResetScore"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:gravity="center_vertical"
                 android:textColor="@color/light"
                 android:textSize="@dimen/font_size_text" />
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/scoresImg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:src="@drawable/trophy"
+            android:layout_weight="9"
+            android:scaleType="fitCenter"
+            android:layout_marginBottom="@dimen/image_bottom_margin"/>
     </LinearLayout>
 
 </LinearLayout>
