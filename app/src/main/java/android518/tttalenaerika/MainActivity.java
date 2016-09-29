@@ -19,7 +19,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private boolean isPlayerTwoHuman = false;
-    private ImageView[] views = new ImageView[10];
+    private ImageView[] views = new ImageView[9];
     private int turn = 0;
     private int playerXPts = 0;
     private int playerOPts = 0;
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             // Make sure tags is not empty array
             if (savedInstanceState.getStringArray("tags").length != 0) {
                 String[] temp = savedInstanceState.getStringArray("tags");
-                for (int i = 1; i < temp.length; i++) {
+                for (int i = 0; i < temp.length; i++) {
                     // Reserve appropriate view if it is not null (un-clicked)
                     if (temp[i] != null) {
                         reserveView(views[i], temp[i]);
@@ -159,16 +159,16 @@ public class MainActivity extends AppCompatActivity {
      */
     private boolean checkWin() {
         return  //check horizontally
-                formWinPosition(views[1], views[2], views[3]) ||
-                        formWinPosition(views[4], views[5], views[6]) ||
-                        formWinPosition(views[7], views[8], views[9])
+                formWinPosition(views[0], views[1], views[2]) ||
+                        formWinPosition(views[3], views[4], views[5]) ||
+                        formWinPosition(views[6], views[7], views[8])
                         //check vertically
+                        || formWinPosition(views[0], views[3], views[6])
                         || formWinPosition(views[1], views[4], views[7])
                         || formWinPosition(views[2], views[5], views[8])
-                        || formWinPosition(views[3], views[6], views[9])
                         //check diagonally
-                        || formWinPosition(views[1], views[5], views[9]) ||
-                        formWinPosition(views[3], views[5], views[7]);
+                        || formWinPosition(views[0], views[4], views[8]) ||
+                        formWinPosition(views[2], views[4], views[6]);
     }
 
     /**
@@ -217,9 +217,9 @@ public class MainActivity extends AppCompatActivity {
      */
     private int compEasy() {
         Random random = new Random();
-        int choice = 0;
+        int choice;
         do {
-            choice = random.nextInt(9) + 1;
+            choice = random.nextInt(9);
         } while (isViewReserved(choice));
 
         return choice;
@@ -229,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
      * Makes buttons not clickable.
      */
     private void disableBoard() {
-        for (int i = 1; i < views.length; i++)
+        for (int i = 0; i < views.length; i++)
             views[i].setClickable(false);
     }
 
@@ -262,7 +262,7 @@ public class MainActivity extends AppCompatActivity {
      * representing 1-9 buttons.
      */
     private void getViews() {
-        for (int i = 1; i < views.length; i++) {
+        for (int i = 0; i < views.length; i++) {
             int id = getResources().getIdentifier("img" + i, "id", getPackageName());
             views[i] = (ImageView) findViewById(id);
         }
@@ -288,7 +288,7 @@ public class MainActivity extends AppCompatActivity {
      * Clears the board and sets all values to their defaults.
      */
     private void prepareBoard() {
-        for (int i = 1; i < views.length; i++) {
+        for (int i = 0; i < views.length; i++) {
             views[i].setImageResource(R.drawable.back);
             views[i].setTag(null);
             views[i].setClickable(true);
@@ -389,7 +389,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putBoolean("isPlayerTwoHuman", isPlayerTwoHuman);
 
         // Save image data (which letter if applies)
-        for (int i = 1; i < views.length; i++) {
+        for (int i = 0; i < views.length; i++) {
             // If tag is not null, add it, else keep the array value as null
             if (views[i].getTag() != null) {
                 tags[i] = views[i].getTag().toString();
