@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TTTAlenaErika</string>
+    <string name="gameName">Tic Tac Toe</string>
+    <string name="resetName">Réinitialiser</string>
+    <string name="aboutName">À propos</string>
+    <string name="zeroName">Zero</string>
+    <string name="scoresName">Points</string>
+    <string name="playName">Jouer</string>
+    <string name="modeComp">Joueur contre Ordi</string>
+    <string name="modePlayer">Joueur contre Joueur</string>
+    <string name="toastPlayerWin">Joueur %1$s a gagné la partie!\nCliquez sur réinitialiser pour rejouer.</string>
+    <string name="toastDraw">Match nul!\nCliquez sur réinitialiser pour rejouer.</string>
+    <string name="toastTurn">C\'est le tour de joueur %1$s.</string>
+    <string name="toastCompWin">L\'ordi a gagné la partie!\nCliquez sur réinitialiser pour rejouer.</string>
+    <string name="scoresPlayerX">Victoires du Joueur X:</string>
+    <string name="scoresPlayerO">Victoires du Joueur O:</string>
+    <string name="scoresTies">Égalités:</string>
+    <string name="scoresComp">Victoires de l\'ordi:</string>
+    <string name="scoresReset">Nombre de réinitialisations:</string>
+    <string name="aboutGame">
+        Pour gagner la partie, place trois icônes identiques en rang!  Le rang peut être horizontal, vertical, ou en diagonale.
+        \nAppuyer sur le bouton Joueur pour changer le mode de jeu entre joueur contre ordi et joueur contre joueur.
+        \nAppuyer sur le bouton Réinitialiser pour effacer le jeu et recommencer.
+        \nAppuyer sur le bouton Points pour voir l\'accumulation de points pour les parties jouées.
+        \nAppuyer sur le bouton Zero pour effacer tous les points.
+    </string>
+    <string name="aboutCreators">
+        Cette application a été créée par Alena Shulzhenko et Erika Bourque,
+        deux étudiantes dans leur troisième année d\'études en informatique.
+    </string>
+    <string name="toastZero">Tous les points sont effacés.</string>
+    <string name="authorName">Auteurs</string>
+</resources>

@@ -1,15 +1,32 @@
 <resources>
     <string name="app_name">TTTAlenaErika</string>
-    <string name="game">Tic Tac Toe</string>
-    <string name="reset">Reset</string>
-    <string name="about">About</string>
-    <string name="zero">Zero</string>
-    <string name="scores">Scores</string>
-    <string name="play">Play</string>
-    <string name="info_comp">Droid playing</string>
-    <string name="info_user">Two Humans playing</string>
-    <string name="win">%1$s player won this game! Click on Reset to play again.</string>
-    <string name="draw">The game is tied! Reset to play again.</string>
-    <string name="turn">Now it is turn for the player %1$s.</string>
-    <string name="computer">Computer won this game!</string>
+    <string name="gameName">Tic Tac Toe</string>
+    <string name="resetName">Reset</string>
+    <string name="aboutName">About</string>
+    <string name="zeroName">Zero</string>
+    <string name="scoresName">Scores</string>
+    <string name="playName">Play</string>
+    <string name="modeComp">Player vs Droid</string>
+    <string name="modePlayer">Player vs Player</string>
+    <string name="toastPlayerWin">Player %1$s won the game!\nClick on reset to play again.</string>
+    <string name="toastDraw">The game is tied!\nClick on reset to play again.</string>
+    <string name="toastTurn">It is player %1$s\'s turn.</string>
+    <string name="toastCompWin">The droid won the game!\nClick on reset to play again.</string>
+    <string name="scoresPlayerX">Player X wins:</string>
+    <string name="scoresPlayerO">Player O wins:</string>
+    <string name="scoresTies">Ties:</string>
+    <string name="scoresComp">Computer Wins:</string>
+    <string name="scoresReset">Reset Count:</string>
+    <string name="aboutGame">
+        Place three identical icons in a row to win the match!  The icons can be in a row vertically, horizontally and diagonally.
+        \nPressing on the Play button will change the game mode from player vs droid to player vs player, and vice versa.
+        \nPressing on the Reset button will clear the board to play a new match.
+        \nPressing on the Scores button will display the tally of scores for the played games.
+        \nPressing on the Zero button will erase all the scores.
+    </string>
+    <string name="aboutCreators">This app was created by Alena Shulzhenko and Erika Bourque,
+        two Dawson College students currently in their third year of studying computer science.
+    </string>
+    <string name="toastZero">All scores have been erased.</string>
+    <string name="authorName">Authors</string>
 </resources>
