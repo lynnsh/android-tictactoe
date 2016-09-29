@@ -16,8 +16,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     // CHECK: ask if should be using ImageView array of 9 instead (changes in layouts, rightclick find usages)
     // CHECK: make toast text centered
-    // CHECK: add close buttons to about and scores activities
-    // CHECK: use font scaling
+
     private boolean isPlayerTwoHuman = false;
     private ImageView[] views = new ImageView[10];
     private int turn = 0;
@@ -51,29 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Retrieving the state from Bundle
         if (savedInstanceState != null) {
-            // If statements to avoid overriding sharedPrefs scores.  If zero'd, they will be saved in
-            // SharedPrefs right away.
-            if (savedInstanceState.getInt("playerXPts") != 0)
-            {
-                playerXPts = savedInstanceState.getInt("playerXPts");
-            }
-            if (savedInstanceState.getInt("playerOPts") != 0)
-            {
-                playerOPts = savedInstanceState.getInt("playerOPts");
-            }
-            if (savedInstanceState.getInt("compPts") != 0)
-            {
-                compPts = savedInstanceState.getInt("compPts");
-            }
-            if (savedInstanceState.getInt("tiePts") != 0)
-            {
-                tiePts = savedInstanceState.getInt("tiePts");
-            }
-            if (savedInstanceState.getInt("resetCount") != 0)
-            {
-                resetCount = savedInstanceState.getInt("resetCount");
-            }
-
             // Getting isPlayerTwoHuman and turn values
             isPlayerTwoHuman = savedInstanceState.getBoolean("isPlayerTwoHuman");
             turn = savedInstanceState.getInt("turn");
@@ -410,7 +386,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Overriden method.  Saves game data and score values in the bundle.
+     * Overriden method.  Saves game data in the bundle.
      * @param outState
      */
     @Override
@@ -432,12 +408,5 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         outState.putStringArray("tags", tags);
-
-        // Save scores to instance state
-        outState.putInt("playerXPts", playerXPts);
-        outState.putInt("playerOPts", playerOPts);
-        outState.putInt("tiePts", tiePts);
-        outState.putInt("compPts", compPts);
-        outState.putInt("resetCount", resetCount);
     }
 }
