@@ -10,7 +10,7 @@
     <string name="modeComp">Joueur contre Ordi</string>
     <string name="modePlayer">Joueur contre Joueur</string>
     <string name="toastPlayerWin">Joueur %1$s a gagné la partie!\nCliquez sur réinitialiser pour rejouer.</string>
-    <string name="toastDraw">La partie est une égalité!\nCliquez sur réinitialiser pour rejouer.</string>
+    <string name="toastDraw">Match nul!\nCliquez sur réinitialiser pour rejouer.</string>
     <string name="toastTurn">C\'est le tour de joueur %1$s.</string>
     <string name="toastCompWin">L\'ordi a gagné la partie!\nCliquez sur réinitialiser pour rejouer.</string>
     <string name="scoresPlayerX">Victoires du Joueur X:</string>
@@ -26,7 +26,7 @@
         \nAppuyer sur le bouton Zero pour effacer tous les points.
     </string>
     <string name="aboutCreators">
-        Cette application a été créé par Alena Shulzhenko et Erika Bourque,
+        Cette application a été créée par Alena Shulzhenko et Erika Bourque,
         deux étudiantes dans leur troisième année d\'études en informatique.
     </string>
     <string name="toastZero">Tous les points sont effacés.</string>

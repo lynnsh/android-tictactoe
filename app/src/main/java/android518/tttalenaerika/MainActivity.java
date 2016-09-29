@@ -18,7 +18,7 @@ import android.widget.Toast;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private boolean isPlayerTwoHuman = false;
+    private boolean isOpponentHuman = false;
     private ImageView[] views = new ImageView[9];
     private int turn = 0;
     private int playerXPts = 0;
@@ -52,13 +52,13 @@ public class MainActivity extends AppCompatActivity {
 
         // Retrieving the state from Bundle
         if (savedInstanceState != null) {
-            // Getting isPlayerTwoHuman and turn values
-            isPlayerTwoHuman = savedInstanceState.getBoolean("isPlayerTwoHuman");
+            // Getting isOpponentHuman and turn values
+            isOpponentHuman = savedInstanceState.getBoolean("isOpponentHuman");
             turn = savedInstanceState.getInt("turn");
 
             // Updating the string for game mode
             TextView txtViewMode = (TextView) findViewById(R.id.info);
-            if (isPlayerTwoHuman) {
+            if (isOpponentHuman) {
                 txtViewMode.setText(R.string.modePlayer);
             } else {
                 txtViewMode.setText(R.string.modeComp);
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
             disableBoard();
         }
         //two humans playing
-        else if (isPlayerTwoHuman) {
+        else if (isOpponentHuman) {
             String player = findPlayer(turn);
             // Make toast, does not require being centered.
             Toast.makeText(this, String.format(getResources().getString(R.string.toastTurn), player),
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view The view that triggered this method.
      */
     public void play(View view) {
-        isPlayerTwoHuman = !isPlayerTwoHuman;
+        isOpponentHuman = !isOpponentHuman;
         prepareBoard();
     }
 
@@ -259,7 +259,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Populates ImageView array to have a reference to all images
-     * representing 1-9 buttons.
+     * representing 0-8 buttons.
      */
     private void getViews() {
         for (int i = 0; i < views.length; i++) {
@@ -294,7 +294,7 @@ public class MainActivity extends AppCompatActivity {
             views[i].setClickable(true);
         }
         TextView tv = (TextView) findViewById(R.id.info);
-        if (isPlayerTwoHuman) {
+        if (isOpponentHuman) {
             tv.setText(R.string.modePlayer);
         } else {
             tv.setText(R.string.modeComp);
@@ -386,7 +386,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Save game turn number and mode
         outState.putInt("turn", turn);
-        outState.putBoolean("isPlayerTwoHuman", isPlayerTwoHuman);
+        outState.putBoolean("isOpponentHuman", isOpponentHuman);
 
         // Save image data (which letter if applies)
         for (int i = 0; i < views.length; i++) {
