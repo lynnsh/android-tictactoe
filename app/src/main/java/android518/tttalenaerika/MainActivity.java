@@ -5,7 +5,9 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
 import java.util.Random;
+
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,7 +16,6 @@ import android.widget.Toast;
  * Class responsible for Tic Tac Toe game logic.
  */
 public class MainActivity extends AppCompatActivity {
-    // CHECK: ask if should be using ImageView array of 9 instead (changes in layouts, rightclick find usages)
     // CHECK: make toast text centered
 
     private boolean isPlayerTwoHuman = false;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Lifecycle method. Initiates the board and ImageViews with default values.
+     *
      * @param savedInstanceState Bundle object to restore saved data.
      */
     @Override
@@ -54,15 +56,20 @@ public class MainActivity extends AppCompatActivity {
             isPlayerTwoHuman = savedInstanceState.getBoolean("isPlayerTwoHuman");
             turn = savedInstanceState.getInt("turn");
 
+            // Updating the string for game mode
+            TextView txtViewMode = (TextView) findViewById(R.id.info);
+            if (isPlayerTwoHuman) {
+                txtViewMode.setText(R.string.modePlayer);
+            } else {
+                txtViewMode.setText(R.string.modeComp);
+            }
+
             // Make sure tags is not empty array
-            if (savedInstanceState.getStringArray("tags").length != 0)
-            {
+            if (savedInstanceState.getStringArray("tags").length != 0) {
                 String[] temp = savedInstanceState.getStringArray("tags");
-                for (int i = 1; i < temp.length; i++)
-                {
+                for (int i = 1; i < temp.length; i++) {
                     // Reserve appropriate view if it is not null (un-clicked)
-                    if (temp[i] != null)
-                    {
+                    if (temp[i] != null) {
                         reserveView(views[i], temp[i]);
                     }
                 }
@@ -70,11 +77,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
     /**
      * Invoked when user clicks on the ImageView. Checks for the winner
      * and either initiates computer's turn or, in case of two humans playing,
      * indicates whose turn is next.
+     *
      * @param view The ImageView that triggered this method.
      */
     public void btnClick(View view) {
@@ -89,8 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 playerXPts++;
             else
                 playerOPts++;
-        }
-        else {
+        } else {
             initiateNextPlayer();
         }
 
@@ -123,17 +129,18 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Triggered when the user clicks on Play button.
      * Clears the board for the next game and changes the opponent.
+     *
      * @param view The view that triggered this method.
      */
     public void play(View view) {
-        isPlayerTwoHuman = isPlayerTwoHuman == false? true: false;
-        // isPlayerTwoHuman = !isPlayerTwoHuman;
+        isPlayerTwoHuman = !isPlayerTwoHuman;
         prepareBoard();
     }
 
     /**
      * Triggered when the user clicks on Reset button.
      * Clears the board for the next game.
+     *
      * @param view The view that triggered this method.
      */
     public void reset(View view) {
@@ -143,25 +150,27 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Examines whether there is a winning position.
+     *
      * @return true if someone has won; false otherwise.
      */
     private boolean checkWin() {
         return  //check horizontally
                 formWinPosition(views[1], views[2], views[3]) ||
-                formWinPosition(views[4], views[5], views[6]) ||
-                formWinPosition(views[7], views[8], views[9])
-                //check vertically
-                || formWinPosition(views[1], views[4], views[7])
-                || formWinPosition(views[2], views[5], views[8])
-                || formWinPosition(views[3], views[6], views[9])
-                //check diagonally
-                || formWinPosition(views[1], views[5], views[9]) ||
-                   formWinPosition(views[3], views[5], views[7]);
+                        formWinPosition(views[4], views[5], views[6]) ||
+                        formWinPosition(views[7], views[8], views[9])
+                        //check vertically
+                        || formWinPosition(views[1], views[4], views[7])
+                        || formWinPosition(views[2], views[5], views[8])
+                        || formWinPosition(views[3], views[6], views[9])
+                        //check diagonally
+                        || formWinPosition(views[1], views[5], views[9]) ||
+                        formWinPosition(views[3], views[5], views[7]);
     }
 
     /**
      * Determines whether views values are the same and not empty, hence leading
      * to the winning position.
+     *
      * @param view1 The first view to compare to.
      * @param view2 The second view to compare to.
      * @param view3 The third view to compare to.
@@ -169,11 +178,11 @@ public class MainActivity extends AppCompatActivity {
      */
     private boolean formWinPosition(View view1, View view2, View view3) {
         Object obj = view1.getTag();
-        String val1 = obj == null? "" : obj.toString();
+        String val1 = obj == null ? "" : obj.toString();
         obj = view2.getTag();
-        String val2 = obj == null? "" : obj.toString();
+        String val2 = obj == null ? "" : obj.toString();
         obj = view3.getTag();
-        String val3 = obj == null? "" : obj.toString();
+        String val3 = obj == null ? "" : obj.toString();
         return val1.equals(val2) && val1.equals(val3) && !val1.isEmpty();
     }
 
@@ -183,15 +192,14 @@ public class MainActivity extends AppCompatActivity {
      * checks whether the computer has won the game
      * (computer points are increased if this is the case).
      */
-    private void computerTurn()
-    {
+    private void computerTurn() {
         int choice = compEasy();
         ImageView iv = views[choice];
         iv.setImageResource(R.drawable.o);
         iv.setClickable(false);
         iv.setTag("O");
 
-        if (checkWin())  {
+        if (checkWin()) {
             Toast.makeText(this, getResources().getString(R.string.toastCompWin), Toast.LENGTH_LONG).show();
             compPts++;
             disableBoard();
@@ -200,14 +208,14 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Randomly assigns computer's choice.
+     *
      * @return computer's choice.
      */
-    private int compEasy()
-    {
+    private int compEasy() {
         Random random = new Random();
         int choice = 0;
         do {
-            choice = random.nextInt(9)+1;
+            choice = random.nextInt(9) + 1;
         } while (isViewReserved(choice));
 
         return choice;
@@ -217,17 +225,17 @@ public class MainActivity extends AppCompatActivity {
      * Makes buttons not clickable.
      */
     private void disableBoard() {
-        for(int i = 1; i < views.length; i++)
+        for (int i = 1; i < views.length; i++)
             views[i].setClickable(false);
     }
 
     /**
      * Finds current player according to the turn value.
+     *
      * @param turn Current turn value.
      * @return current player, which could be X or O.
      */
-    private String findPlayer(int turn)
-    {
+    private String findPlayer(int turn) {
         if (turn % 2 == 0)
             return "X";
         else
@@ -236,10 +244,11 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Verifies whether the given view is already reserved by a player.
+     *
      * @param num The integer number of the view.
      * @return true if view is reserved; false otherwise.
      */
-    private boolean isViewReserved(int num)  {
+    private boolean isViewReserved(int num) {
         View view = views[num];
         return view.getTag() != null;
     }
@@ -249,43 +258,41 @@ public class MainActivity extends AppCompatActivity {
      * representing 1-9 buttons.
      */
     private void getViews() {
-        for(int i = 1; i < views.length; i++) {
-            int id = getResources().getIdentifier("img"+i, "id", getPackageName());
-            views[i] = (ImageView)findViewById(id);
+        for (int i = 1; i < views.length; i++) {
+            int id = getResources().getIdentifier("img" + i, "id", getPackageName());
+            views[i] = (ImageView) findViewById(id);
         }
     }
 
     /**
      * Reserves view for the provided player.
-     * @param view The ImageView to be reserved.
+     *
+     * @param view   The ImageView to be reserved.
      * @param player The player that reserves the view.
      */
     private void reserveView(View view, String player) {
         view.setTag(player);
         view.setClickable(false);
 
-        if(player.equals("X"))
-            ((ImageView)view).setImageResource(R.drawable.x);
+        if (player.equals("X"))
+            ((ImageView) view).setImageResource(R.drawable.x);
         else
-            ((ImageView)view).setImageResource(R.drawable.o);
+            ((ImageView) view).setImageResource(R.drawable.o);
     }
 
     /**
      * Clears the board and sets all values to their defaults.
      */
     private void prepareBoard() {
-        for(int i = 1; i < views.length; i++) {
+        for (int i = 1; i < views.length; i++) {
             views[i].setImageResource(R.drawable.back);
             views[i].setTag(null);
             views[i].setClickable(true);
         }
         TextView tv = (TextView) findViewById(R.id.info);
-        if(isPlayerTwoHuman)
-        {
+        if (isPlayerTwoHuman) {
             tv.setText(R.string.modePlayer);
-        }
-        else
-        {
+        } else {
             tv.setText(R.string.modeComp);
         }
 
@@ -293,13 +300,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method resets the points counters all to zero, and saves
+     * This method resets the score counters all to zero, and saves
      * the counters to shared preferences.
      *
      * @param view The button that triggered the method
-    */
-    public void zero(View view)
-    {
+     */
+    public void zero(View view) {
         // Resetting the points
         playerXPts = 0;
         playerOPts = 0;
@@ -307,19 +313,8 @@ public class MainActivity extends AppCompatActivity {
         compPts = 0;
         resetCount = 0;
 
-        // Getting the Shared Preferences
-        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-
-        // Adding scores to Shared Preferences
-        editor.putInt("playerXPts", playerXPts);
-        editor.putInt("playerOPts", playerOPts);
-        editor.putInt("tiePts", tiePts);
-        editor.putInt("compPts", compPts);
-        editor.putInt("resetCounter", resetCount);
-
-        // Saving Shared Preferences
-        editor.commit();
+        // Save the scores
+        savePrefs();
 
         // Toast to give result
         Toast.makeText(this, getResources().getString(R.string.toastZero), Toast.LENGTH_SHORT).show();
@@ -365,29 +360,18 @@ public class MainActivity extends AppCompatActivity {
      * persistent data.
      */
     @Override
-    protected void onPause()
-    {
+    protected void onPause() {
         // Calling super class
         super.onPause();
 
-        // Getting the Shared Preferences
-        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-
-        // Adding scores to Shared Preferences
-        editor.putInt("playerXPts", playerXPts);
-        editor.putInt("playerOPts", playerOPts);
-        editor.putInt("tiePts", tiePts);
-        editor.putInt("compPts", compPts);
-        editor.putInt("resetCount", resetCount);
-
-        // Saving Shared Preferences
-        editor.commit();
+        // Save the Scores
+        savePrefs();
     }
 
     /**
      * Overriden method.  Saves game data in the bundle.
-     * @param outState
+     *
+     * @param outState Bundle object to save data.
      */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -408,5 +392,24 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         outState.putStringArray("tags", tags);
+    }
+
+    /**
+     * This method saves the scores to the Shared Preferences.
+     */
+    private void savePrefs() {
+        // Getting the Shared Preferences
+        SharedPreferences prefs = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+
+        // Adding scores to Shared Preferences
+        editor.putInt("playerXPts", playerXPts);
+        editor.putInt("playerOPts", playerOPts);
+        editor.putInt("tiePts", tiePts);
+        editor.putInt("compPts", compPts);
+        editor.putInt("resetCount", resetCount);
+
+        // Saving Shared Preferences
+        editor.commit();
     }
 }

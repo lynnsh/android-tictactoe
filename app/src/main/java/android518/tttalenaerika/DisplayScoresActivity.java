@@ -7,7 +7,6 @@ import android.widget.TextView;
 /**
  * Activity responsible for displaying the MainActivity's scores.
  */
-
 public class DisplayScoresActivity extends AppCompatActivity {
 
     private int playerXPts;
@@ -19,6 +18,7 @@ public class DisplayScoresActivity extends AppCompatActivity {
     /**
      * Overriden lifecycle method. Calls the methods to get the data from the intent and update
      * the display with the values for the scores.
+     *
      * @param savedInstanceState Bundle object to restore saved data.
      */
     @Override
@@ -31,8 +31,7 @@ public class DisplayScoresActivity extends AppCompatActivity {
         setData();
 
         // Retrieve data from SavedInstanceState
-        if (savedInstanceState != null)
-        {
+        if (savedInstanceState != null) {
             // Ints cannot be null, thus do not need to check
             playerXPts = savedInstanceState.getInt("playerXPts");
             playerOPts = savedInstanceState.getInt("playerOPts");
@@ -48,8 +47,7 @@ public class DisplayScoresActivity extends AppCompatActivity {
     /**
      * Sets the data given through the intent.
      */
-    private void setData()
-    {
+    private void setData() {
         playerXPts = getIntent().getExtras().getInt("playerXPts", 0);
         playerOPts = getIntent().getExtras().getInt("playerOPts", 0);
         tiePts = getIntent().getExtras().getInt("tiePts", 0);
@@ -60,8 +58,7 @@ public class DisplayScoresActivity extends AppCompatActivity {
     /**
      * Updates the display to append the scores to the strings
      */
-    private void updateDisplay()
-    {
+    private void updateDisplay() {
         // Getting all the appropriate text views
         TextView txtViewPlayerX = (TextView) findViewById(R.id.txtViewPlayerXScore);
         TextView txtViewPlayerO = (TextView) findViewById(R.id.txtViewPlayerOScore);
@@ -79,11 +76,11 @@ public class DisplayScoresActivity extends AppCompatActivity {
 
     /**
      * Overriden method.  Saves score values in the bundle.
-     * @param outState
+     *
+     * @param outState Bundle object to save data.
      */
     @Override
-    protected void onSaveInstanceState(Bundle outState)
-    {
+    protected void onSaveInstanceState(Bundle outState) {
         // Call the super
         super.onSaveInstanceState(outState);
 

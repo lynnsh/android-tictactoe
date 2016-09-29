@@ -25,7 +25,7 @@
         \nPressing on the Zero button will erase all the scores.
     </string>
     <string name="aboutCreators">This app was created by Alena Shulzhenko and Erika Bourque,
-        two Dawson College student currently in their third year of studying computer science.
+        two Dawson College students currently in their third year of studying computer science.
     </string>
     <string name="toastZero">All scores have been erased.</string>
     <string name="authorName">Authors</string>

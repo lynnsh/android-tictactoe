@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 public class AboutActivity extends AppCompatActivity {
     /**
      * Overriden lifecycle method. Sets the layout.
+     *
      * @param savedInstanceState Bundle object to restore saved data.
      */
     @Override
