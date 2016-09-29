@@ -144,7 +144,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="end|center_vertical"
-                android:text="@string/scoresComp"
+                android:text="@string/scoresReset"
                 android:textColor="@color/light"
                 android:layout_marginRight="@dimen/textbox_right_margin"
                 android:textSize="@dimen/font_size_text" />
