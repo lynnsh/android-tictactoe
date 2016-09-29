@@ -7,4 +7,6 @@
     <color name="light">#99ffbb</color>
     <color name="white">#fff</color>
     <color name="button">#262626</color>
+    <color name="about">#876750</color>
+    <color name="scores">#CC0027</color>
 </resources>

@@ -25,6 +25,7 @@ public class DisplayScoresActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle(R.string.gameName);
+        setTheme(R.style.ScoresTheme);
         setContentView(R.layout.activity_displayscores);
 
         // Retrieving data from Intent

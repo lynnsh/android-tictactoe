@@ -17,6 +17,7 @@ public class AboutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle(R.string.gameName);
+        setTheme(R.style.AboutTheme);
         setContentView(R.layout.activity_about);
     }
 }
