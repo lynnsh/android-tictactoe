@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 
 import java.util.Random;
@@ -90,7 +91,10 @@ public class MainActivity extends AppCompatActivity {
         turn++;
 
         if (checkWin()) {
-            Toast.makeText(this, String.format(getResources().getString(R.string.toastPlayerWin), currentPlayer), Toast.LENGTH_LONG).show();
+            // Display Toast with centered text
+            displayCenteredToast(String.format(getResources().getString(R.string.toastPlayerWin), currentPlayer), Toast.LENGTH_LONG);
+
+            // Disable board and update scores
             disableBoard();
             if (currentPlayer.equals("X"))
                 playerXPts++;
@@ -110,12 +114,13 @@ public class MainActivity extends AppCompatActivity {
         //check for a draw
         if (turn > 8) {
             tiePts++;
-            Toast.makeText(this, R.string.toastDraw, Toast.LENGTH_LONG).show();
+            displayCenteredToast(getResources().getString(R.string.toastDraw), Toast.LENGTH_LONG);
             disableBoard();
         }
         //two humans playing
         else if (isPlayerTwoHuman) {
             String player = findPlayer(turn);
+            // Make toast, does not require being centered.
             Toast.makeText(this, String.format(getResources().getString(R.string.toastTurn), player),
                     Toast.LENGTH_SHORT).show();
         }
@@ -200,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
         iv.setTag("O");
 
         if (checkWin()) {
-            Toast.makeText(this, getResources().getString(R.string.toastCompWin), Toast.LENGTH_LONG).show();
+            displayCenteredToast(getResources().getString(R.string.toastCompWin), Toast.LENGTH_LONG);
             compPts++;
             disableBoard();
         }
@@ -316,7 +321,7 @@ public class MainActivity extends AppCompatActivity {
         // Save the scores
         savePrefs();
 
-        // Toast to give result
+        // Toast to give result, do not need it to be centered
         Toast.makeText(this, getResources().getString(R.string.toastZero), Toast.LENGTH_SHORT).show();
     }
 
@@ -411,5 +416,15 @@ public class MainActivity extends AppCompatActivity {
 
         // Saving Shared Preferences
         editor.commit();
+    }
+
+    private void displayCenteredToast(String text, int duration)
+    {
+        Toast toast = Toast.makeText(this, text, duration);
+        TextView temp = (TextView) toast.getView().findViewById(android.R.id.message);
+        if (temp != null) {
+            temp.setGravity(Gravity.CENTER);
+        }
+        toast.show();
     }
 }
