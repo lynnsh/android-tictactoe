@@ -379,7 +379,7 @@ public class MainActivity extends AppCompatActivity {
      */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        String[] tags = new String[10];
+        String[] tags = new String[9];
 
         // Call the super
         super.onSaveInstanceState(outState);
