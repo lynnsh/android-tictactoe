@@ -9,4 +9,6 @@ Description:
 3. It has the About page that displays the game rules, and the Scores page that prints current scores, which could be zeroed.
 4. The player can reset the game.
 
+<sub>source: https://gitlab.com/ashulzhenko/android-tictactoe</sub>
+
 <sub>Academic Project - Dawson College (Computer Science Technology) - Fall 2016</sub>
