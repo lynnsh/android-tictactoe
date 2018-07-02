@@ -11,4 +11,4 @@ Description:
 
 <sub>source: https://gitlab.com/ashulzhenko/android-tictactoe</sub>
 
-<sub>Academic Project - Dawson College (Computer Science Technology) - Fall 2016</sub>
+<sub>Academic Project - Dawson College (Computer Science Technology)</sub>
